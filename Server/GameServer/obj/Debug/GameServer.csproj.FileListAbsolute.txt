@@ -1,0 +1,7 @@
+E:\EL2021\CarbonAge-Counter\Server\GameServer\bin\Debug\GameServer.exe.config
+E:\EL2021\CarbonAge-Counter\Server\GameServer\bin\Debug\GameServer.exe
+E:\EL2021\CarbonAge-Counter\Server\GameServer\bin\Debug\GameServer.pdb
+E:\EL2021\CarbonAge-Counter\Server\GameServer\obj\Debug\GameServer.csprojAssemblyReference.cache
+E:\EL2021\CarbonAge-Counter\Server\GameServer\obj\Debug\GameServer.csproj.CoreCompileInputs.cache
+E:\EL2021\CarbonAge-Counter\Server\GameServer\obj\Debug\GameServer.exe
+E:\EL2021\CarbonAge-Counter\Server\GameServer\obj\Debug\GameServer.pdb
