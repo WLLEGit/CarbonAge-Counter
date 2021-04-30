@@ -66,6 +66,9 @@ namespace GameServer
     {
         public Player Target;
         public string CommandMsg;
+
+        public Command() { }
+        public Command(Player p, string msg) { Target = p;CommandMsg = msg; }
     }
     public class Player     //游戏玩家类
     {
@@ -116,9 +119,16 @@ namespace GameServer
         {
 
         }
-        private void Exit(params string[] args)
+        public  void Exit(params string[] args)
         {
-
+            List<Command> commands = new List<Command>();
+            Player anotherPlayer = Room.AnotherPlayer(this);
+            commands.Add(new Command(anotherPlayer, "RivalExit"));
+            Room.SendCommands(commands);
+            anotherPlayer.Socket.Shutdown(SocketShutdown.Both);
+            anotherPlayer.Socket.Close();
+            Console.WriteLine("{0}退出", Socket.RemoteEndPoint);
+            Environment.Exit(0);
         }
     }
 }

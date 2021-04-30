@@ -98,6 +98,7 @@ namespace GameServer
                 Console.WriteLine(e.Message);
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
+                player.Exit();
             }
         }
         public void SendCommands(List<Command> commands)

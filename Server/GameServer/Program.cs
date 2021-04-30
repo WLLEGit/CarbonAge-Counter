@@ -22,4 +22,9 @@ namespace GameServer
 
         }
     }
+
+    public class TurnManager
+    {
+
+    }
 }
