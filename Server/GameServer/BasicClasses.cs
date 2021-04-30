@@ -18,21 +18,23 @@ namespace GameServer
 
     public class Leader            //领袖类
     {
+        public Leaders Type;
         public double MilitaryBonusRate;
         public double EraBonusRate;
         public double CarbonBonusRate;
 
-        public Leader(double miliRate, double eraRate, double carbonRate)
+        public Leader(Leaders type, double miliRate, double eraRate, double carbonRate)
         {
+            Type = type;
             MilitaryBonusRate = miliRate;
             EraBonusRate = eraRate;
             CarbonBonusRate = carbonRate;
         }
-        public Leader GetLeader(Leaders leader)
+        static public Leader GetLeader(Leaders leader)
         {
             return leader switch
             {
-                _ => new Leader(1, 1, 1),
+                _ => new Leader(leader, 1, 1, 1),
             };
         }
     }
@@ -54,7 +56,7 @@ namespace GameServer
             EraDelta = eraDelta;
             CarbonDelta = carbonDelta;
         }
-        public Card GetCard(Cards card)
+        public static Card GetCard(Cards card)
         {
             return card switch
             {
@@ -68,7 +70,7 @@ namespace GameServer
         public string CommandMsg;
 
         public Command() { }
-        public Command(Player p, string msg) { Target = p;CommandMsg = msg; }
+        public Command(Player p, string msg) { Target = p; CommandMsg = msg; }
     }
     public class Player     //游戏玩家类
     {
@@ -76,8 +78,9 @@ namespace GameServer
         public Room Room;
 
         public Leader Leader;
-        public Card[] CardsArray;
+        public List<Card> Cards;
 
+        public double score;
         public double MilitaryPoints;
         public double EraPoints;
         public double CarbonPoints;
@@ -85,9 +88,27 @@ namespace GameServer
         public double DeltaEraPoints;
         public double DeltaCarbonPoints;
 
-        public double Health;
-        public double Attack;
+        public double Health = 100;
+        public double Attack = 0;
 
+        public string Msg;
+
+        private bool isTurnEnd;
+
+        public void StartTurn()
+        {
+            isTurnEnd = false;
+            StartThisTurn();
+
+            while (!isTurnEnd)
+            {
+                if (Msg.Length != 0)
+                {
+                    ProcessMessage(Msg);
+                    Msg = "";
+                }
+            }
+        }
 
         public void ProcessMessage(string msg)
         {
@@ -99,7 +120,7 @@ namespace GameServer
                 Type t = typeof(Player);
                 var method = t.GetMethod(tokens[0]);        //根据tokens的第一个词查找需要调用的函数
 
-                if(method == null)
+                if (method == null)
                     Console.WriteLine("Can't find function: " + tokens[0]);
                 else
                 {
@@ -111,24 +132,78 @@ namespace GameServer
             Room.SendCommands(commands);
         }
 
-        private void SetCardBoard(params string[] args)
+        private List<Command> SetCardBoard(params string[] args)
         {
-
+            List<Command> commands = new List<Command>();
+            Cards.Clear();
+            string cmdMsg = new string("RivalSetCardBoard ");
+            foreach (string cardName in args)
+            {
+                if (cardName == "SetCardBoard")
+                    continue;
+                cmdMsg += cardName + " ";
+                Cards.Add(Card.GetCard((Cards)System.Enum.Parse(typeof(Cards), cardName)));
+            }
+            commands.Add(new Command() { Target = Room.AnotherPlayer(this), CommandMsg = cmdMsg });
+            return commands;
         }
-        private void DealDamage(params string[] args)
+        private List<Command> DealDamage(params string[] args)
         {
-
+            List<Command> commands = new List<Command>
+            {
+                new Command() { Target = Room.AnotherPlayer(this), CommandMsg = "RivalDealDamage " + Attack }
+            };
+            Room.AnotherPlayer(this).Health -= Attack;
+            return commands;
         }
-        public  void Exit(params string[] args)
+        private void StartThisTurn()
+        {
+            List<Command> commands = new List<Command>();
+            if (Health > 0)
+            {
+                commands.Add(new Command { Target = this, CommandMsg = "StartThisTurn" });
+            }
+            else
+            {
+                commands.Add(new Command { Target = this, CommandMsg = "Die" });
+                commands.Add(new Command { Target = Room.AnotherPlayer(this), CommandMsg = "Win" });
+            }
+            Room.SendCommands(commands);
+        }
+        private List<Command> EndThisTurn(params string[] args)
+        {
+            isTurnEnd = true;
+            return new List<Command>();
+        }
+        private List<Command> SetLeader(params string[] args)
+        {
+            Leader = Leader.GetLeader((Leaders)System.Enum.Parse(typeof(Leaders), args[1]));
+            List<Command> commands = new List<Command>
+            {
+                new Command() { Target = Room.AnotherPlayer(this), CommandMsg = "RivalSetLeader " + Leader.Type }
+            };
+            return commands;
+        }
+        public List<Command> Exit(params string[] args)
         {
             List<Command> commands = new List<Command>();
             Player anotherPlayer = Room.AnotherPlayer(this);
-            commands.Add(new Command(anotherPlayer, "RivalExit"));
+            commands.Add(new Command(anotherPlayer, "Win"));
             Room.SendCommands(commands);
             anotherPlayer.Socket.Shutdown(SocketShutdown.Both);
             anotherPlayer.Socket.Close();
             Console.WriteLine("{0}退出", Socket.RemoteEndPoint);
             Environment.Exit(0);
+            return new List<Command>();
+        }
+        public List<Command> ChangePoints(params string[] args)
+        {
+            MilitaryPoints += double.Parse(args[1]);
+            EraPoints += double.Parse(args[2]);
+            CarbonPoints += double.Parse(args[3]);
+            List<Command> commands = new List<Command>();
+            commands.Add(new Command { Target = Room.AnotherPlayer(this), CommandMsg = "ChangePoints " + args[1] + " " + args[2] + " " + args[3] });
+            return commands;
         }
     }
 }

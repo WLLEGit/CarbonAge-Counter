@@ -24,6 +24,21 @@ namespace GameServer
 
     public class Room
     {
+        //测试用
+        int TestInt = 0;
+        private void TestSendMsg(Player p)
+        {
+            List<Command> commands = new List<Command>();
+            Command command = new Command
+            {
+                Target = p,
+                CommandMsg = "Message" + TestInt
+            };
+            commands.Add(command);
+            TestInt++;
+            SendCommands(commands);
+        }
+
         public Socket SeverSocket;
         public Player[] Players = new Player[2];
 
@@ -91,6 +106,8 @@ namespace GameServer
                     int len = socket.Receive(buffer);
                     var msg = Encoding.UTF8.GetString(buffer, 0, len);
                     Console.WriteLine("接收到来自{0}的消息：\n{1}", player.Socket.RemoteEndPoint, msg);
+                    player.Msg = msg;
+                    TestSendMsg(player);
                 }
             }
             catch (Exception e)
@@ -115,8 +132,8 @@ namespace GameServer
             byte[] toPlayer1Bytes = System.Text.Encoding.UTF8.GetBytes(toPlayer1);
             byte[] toPlayer2Bytes = System.Text.Encoding.UTF8.GetBytes(toPlayer2);
 
-            Players[0].Socket.Send(toPlayer1Bytes);
             Players[1].Socket.Send(toPlayer2Bytes);
+            Players[0].Socket.Send(toPlayer1Bytes);
         }
     }
 }
