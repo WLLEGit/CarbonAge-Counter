@@ -93,7 +93,7 @@ namespace GameServer
 
         public string Msg;
 
-        private bool isTurnEnd;
+        private  bool isTurnEnd;
 
         public void StartTurn()
         {
@@ -114,6 +114,7 @@ namespace GameServer
         {
             List<Command> commands = new List<Command>();
             string[] lines = msg.Split('\n');
+            lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //删除空行
             foreach (var line in lines)
             {
                 string[] tokens = line.Split(" ");
@@ -124,7 +125,7 @@ namespace GameServer
                     Console.WriteLine("Can't find function: " + tokens[0]);
                 else
                 {
-                    List<Command> resCommands = method.Invoke(this, tokens) as List<Command>;       //每一个函数调用完后返回客户端需要执行的command
+                    List<Command> resCommands = method.Invoke(this, new object[] { tokens}) as List<Command>;       //每一个函数调用完后返回客户端需要执行的command
                     foreach (var command in resCommands)
                         commands.Add(command);
                 }
@@ -132,8 +133,9 @@ namespace GameServer
             Room.SendCommands(commands);
         }
 
-        private List<Command> SetCardBoard(params string[] args)
+        public List<Command> SetCardBoard(object o)
         {
+            string[] args = o as string[];
             List<Command> commands = new List<Command>();
             Cards.Clear();
             string cmdMsg = new string("RivalSetCardBoard ");
@@ -147,7 +149,7 @@ namespace GameServer
             commands.Add(new Command() { Target = Room.AnotherPlayer(this), CommandMsg = cmdMsg });
             return commands;
         }
-        private List<Command> DealDamage(params string[] args)
+        public List<Command> DealDamage(object o)
         {
             List<Command> commands = new List<Command>
             {
@@ -156,7 +158,7 @@ namespace GameServer
             Room.AnotherPlayer(this).Health -= Attack;
             return commands;
         }
-        private void StartThisTurn()
+        public void StartThisTurn()
         {
             List<Command> commands = new List<Command>();
             if (Health > 0)
@@ -170,13 +172,14 @@ namespace GameServer
             }
             Room.SendCommands(commands);
         }
-        private List<Command> EndThisTurn(params string[] args)
+        public List<Command> EndThisTurn(object o)
         {
             isTurnEnd = true;
             return new List<Command>();
         }
-        private List<Command> SetLeader(params string[] args)
+        public List<Command> SetLeader(object o)
         {
+            string[] args = o as string[];
             Leader = Leader.GetLeader((Leaders)System.Enum.Parse(typeof(Leaders), args[1]));
             List<Command> commands = new List<Command>
             {
@@ -184,7 +187,7 @@ namespace GameServer
             };
             return commands;
         }
-        public List<Command> Exit(params string[] args)
+        public List<Command> Exit(object o)
         {
             List<Command> commands = new List<Command>();
             Player anotherPlayer = Room.AnotherPlayer(this);
@@ -196,13 +199,16 @@ namespace GameServer
             Environment.Exit(0);
             return new List<Command>();
         }
-        public List<Command> ChangePoints(params string[] args)
+        public List<Command> ChangePoints(object o)
         {
+            string[] args = o as string[];
             MilitaryPoints += double.Parse(args[1]);
             EraPoints += double.Parse(args[2]);
             CarbonPoints += double.Parse(args[3]);
-            List<Command> commands = new List<Command>();
-            commands.Add(new Command { Target = Room.AnotherPlayer(this), CommandMsg = "ChangePoints " + args[1] + " " + args[2] + " " + args[3] });
+            List<Command> commands = new List<Command>
+            {
+                new Command { Target = Room.AnotherPlayer(this), CommandMsg = "ChangePoints " + args[1] + " " + args[2] + " " + args[3] }
+            };
             return commands;
         }
     }

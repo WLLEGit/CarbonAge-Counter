@@ -7,6 +7,7 @@ using System.Threading;
 using UnityEngine;
 using System.Text;
 using UnityEngine.UI;
+using System.Linq;
 
 public class ClientNetwork : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class ClientNetwork : MonoBehaviour
     private void ProcessMsg(string msg)
     {
         string[] lines = msg.Split('\n');
+        lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //删除空行
         foreach (var line in lines)
         {
             string[] tokens = line.Split(' ');
@@ -77,7 +79,7 @@ public class ClientNetwork : MonoBehaviour
             if (method == null)
                 Debug.LogError("无法解析的函数：" + tokens[0]);
             else
-                method.Invoke(this, tokens);
+                method.Invoke(this, new object[] { tokens});
         }
     }
     //提供的接口
@@ -111,52 +113,52 @@ public class ClientNetwork : MonoBehaviour
     }
 
     //需要的接口
-    private void RivalChangeCardBoard(params string[] args)
+    private void RivalChangeCardBoard(object o)
     {
 
     }
 
-    private void RivalDealDamage(params string[] args)
+    private void RivalDealDamage(object o)
     {
 
     }
 
-    private void ChangePoints(params string[] args)
+    private void ChangePoints(object o)
     {
 
     }
 
-    private void EndGame(params string[] args)
+    private void EndGame(object o)
     {
 
     }
 
-    private void Win(params string[] args)
+    private void Win(object o)
     {
 
     }
 
-    private void Die(params string[] args)
+    private void Die(object o)
     {
 
     }
 
-    private void Lose(params string[] args)
+    private void Lose(object o)
     {
 
     }
 
-    private void StartThisTurn(params string[] args)
+    private void StartThisTurn(object o)
     {
 
     }
 
-    private void RivalSetLeader(params string[] args)
+    private void RivalSetLeader(object o)
     {
 
     }
 
-    private void RivalChangePoints(params string[] args)
+    private void RivalChangePoints(object o)
     {
 
     }

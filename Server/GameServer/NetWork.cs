@@ -76,7 +76,7 @@ namespace GameServer
 
                     Players[remainPlayer - 1] = new Player
                     {
-                        Socket = client, Room = this
+                        Socket = client, Room = this, Msg = new string("")
                     };
                     Console.WriteLine($"玩家{remainPlayer}（{endPoint}）连接成功");
 
@@ -107,7 +107,6 @@ namespace GameServer
                     var msg = Encoding.UTF8.GetString(buffer, 0, len);
                     Console.WriteLine("接收到来自{0}的消息：\n{1}", player.Socket.RemoteEndPoint, msg);
                     player.Msg = msg;
-                    TestSendMsg(player);
                 }
             }
             catch (Exception e)
@@ -115,7 +114,7 @@ namespace GameServer
                 Console.WriteLine(e.Message);
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
-                player.Exit();
+                player.Exit(new object[] { 1});
             }
         }
         public void SendCommands(List<Command> commands)
