@@ -166,7 +166,9 @@ public class ClientNetwork : MonoBehaviour
 
 public enum Leaders     //领袖枚举类型
 {
-    DefaultLeader
+    DefaultLeader,
+    Bear,       //毛熊
+    Hawk        //鹰酱
 }
 
 public enum Cards       //卡牌枚举
