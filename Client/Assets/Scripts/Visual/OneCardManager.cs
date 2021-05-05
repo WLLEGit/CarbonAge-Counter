@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 // holds the refs to all the Text, Images on the card
-public class OneCardManager : MonoBehaviour {
-
+public class OneCardManager : MonoBehaviour
+{
     public CardAsset cardAsset;
     [Header("Text Component References")]
     public Text Title_Text;
@@ -36,11 +36,16 @@ public class OneCardManager : MonoBehaviour {
 
     public void ReadCardFromAsset()
     {
-    Title_Text.text = cardAsset.name;
-    Mil_Text.text = cardAsset.Mil.ToString();
-    Description_Text.text = cardAsset.Description;
-    Tec_Text.text=cardAsset.Tec.ToString();
-    Carbon_Text.text=cardAsset.Carbon.ToString();
-    Time=cardAsset.Time;
+        Title_Text.text = cardAsset.name;
+        Mil_Text.text = cardAsset.Mil.ToString();
+        Description_Text.text = cardAsset.Description;
+        Tec_Text.text = cardAsset.Tec.ToString();
+        Carbon_Text.text = cardAsset.Carbon.ToString();
+        Time = cardAsset.Time;
+    }
+
+    private void Update()
+    {
+
     }
 }

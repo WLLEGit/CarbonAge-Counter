@@ -41,7 +41,9 @@ namespace GameServer
 
     public enum Cards       //卡牌枚举
     {
-        DefaultCard
+        DefaultCard,
+        DaoGengHuoZhong,
+        TanBuJi
     }
 
     public class Card       //卡牌类
@@ -60,7 +62,9 @@ namespace GameServer
         {
             return card switch
             {
-                _ => new Card(0, 0, 0),
+                Cards.DaoGengHuoZhong => new Card(8,5,10),
+                Cards.TanBuJi => new Card(0,0,-100),
+                _ => new Card(0, 0, 0)
             };
         }
     }
