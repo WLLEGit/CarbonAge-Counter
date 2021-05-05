@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class Draggable : MonoBehaviour
 {
     private bool isMoving = false;
+    private float zDisplacement;
+    private Vector3 pointerDisplacement;
+
+    public static Draggable DraggableInstanse;
     private void OnMouseDown()
     {
+        DraggableInstanse = this;
         isMoving = true;
-        Debug.Log("OnMouseDown!!");
+        zDisplacement = -Camera.main.transform.position.z + transform.position.z;
+        pointerDisplacement = -transform.position + MouseInWorldCoords();
     }
     private void OnMouseUp()
     {
@@ -30,12 +36,19 @@ public class Draggable : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.position = Input.mousePosition;
+            Vector3 mousePos = MouseInWorldCoords();
+            transform.position = new Vector3(mousePos.x - pointerDisplacement.x, mousePos.y - pointerDisplacement.y, transform.position.z);
         }
     }
 
     private void ReturnToPreviousPosition()
     {
 
+    }
+    public Vector3 MouseInWorldCoords()
+    {
+        var screenMousePos = Input.mousePosition;
+        screenMousePos.z = zDisplacement;
+        return Camera.main.ScreenToWorldPoint(screenMousePos);
     }
 }

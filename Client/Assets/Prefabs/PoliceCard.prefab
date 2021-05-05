@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8834457125103021749}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1314959409371229140}
   - component: {fileID: 6091874702641202028}
   - component: {fileID: 8983026312775300380}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Time_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4274510377635858387}
   - component: {fileID: 285836180600481655}
   - component: {fileID: 4879791644059327838}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CardBody_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 3668694900790495846}
   - component: {fileID: 1245800230618330737}
   - component: {fileID: 8330480957652848868}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Title_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7782137338515299558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FacePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,9 +292,9 @@ Transform:
   m_GameObject: {fileID: 4306733142021453644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.02}
-  m_LocalScale: {x: 200, y: 200, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6509898240661655291}
+  m_Father: {fileID: 6509898240482239903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6509898238826662838
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 6509898238826662833}
   - component: {fileID: 6509898238826662835}
   - component: {fileID: 6509898238826662832}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Frame_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 6509898239043715948}
   - component: {fileID: 6509898239043715950}
   - component: {fileID: 6509898239043715951}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Tec_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 6509898239045539814}
   - component: {fileID: 6509898239045539808}
   - component: {fileID: 6509898239045539809}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Mil_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.74500006, y: 0.83400005}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.6407013, y: -0.73498535}
+  m_AnchoredPosition: {x: -0.64068604, y: -0.73498535}
   m_SizeDelta: {x: -2.2679882, y: 1.6896539}
   m_Pivot: {x: 0.5, y: 0.49999985}
 --- !u!222 &6509898239045539808
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 6509898239086136487}
   - component: {fileID: 6509898239086136481}
   - component: {fileID: 6509898239086136486}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ RectTransform:
   - {fileID: 8834457125103021749}
   - {fileID: 6509898239733893119}
   m_Father: {fileID: 6509898240661655291}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 6509898239236794665}
   - component: {fileID: 6509898239236794667}
   - component: {fileID: 6509898239236794664}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Picture_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 6509898239431784293}
   - component: {fileID: 6509898239431784295}
   - component: {fileID: 6509898239431784292}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Description_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 6509898239723197834}
   - component: {fileID: 6509898239723197844}
   - component: {fileID: 6509898239723197845}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Mil_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6509898239733893119}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CardFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 6509898239819184155}
   - component: {fileID: 6509898239819184165}
   - component: {fileID: 6509898239819184154}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Carbon_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.74500006, y: 0}
   m_AnchorMax: {x: 1, y: 0.16912884}
-  m_AnchoredPosition: {x: -0.853714, y: -0.34277344}
+  m_AnchoredPosition: {x: -0.85369873, y: -0.34277344}
   m_SizeDelta: {x: -1.6826305, y: -0.5857414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6509898239819184165
@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 6509898239946523645}
   - component: {fileID: 6509898239946523644}
   - component: {fileID: 6509898239946523647}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Title_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 6509898239990969114}
   - component: {fileID: 6509898239990969124}
   - component: {fileID: 6509898239990969125}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CardBody_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 6509898240067550595}
   - component: {fileID: 6509898240067550605}
   - component: {fileID: 6509898240067550594}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Picture_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 6509898240135349305}
   - component: {fileID: 6509898240135349307}
   - component: {fileID: 6509898240135349304}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Tec_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 6509898240256054568}
   - component: {fileID: 6509898240256054570}
   - component: {fileID: 6509898240256054571}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Time_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 6509898240434316534}
   - component: {fileID: 6509898240434316528}
   - component: {fileID: 6509898240434316529}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Description_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,8 @@ GameObject:
   - component: {fileID: 5205433434987195561}
   - component: {fileID: 4182661908557536813}
   - component: {fileID: 3399730664204791520}
-  m_Layer: 0
+  - component: {fileID: 8984295813247792278}
+  m_Layer: 6
   m_Name: PoliceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,9 +1439,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6509898240482239900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7782137338515299558}
   - {fileID: 6509898240661655291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1456,7 +1458,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.01}
+  m_Size: {x: 200, y: 300, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4182661908557536813
 MonoBehaviour:
@@ -1489,12 +1491,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30f6cc8f18d899468f3a34a7352bb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title_Text: {fileID: 0}
-  Mil_Text: {fileID: 0}
-  Description_Text: {fileID: 0}
-  Tec_Text: {fileID: 0}
-  Carbon_Text: {fileID: 0}
-  Time: 0
+--- !u!114 &8984295813247792278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509898240482239900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bd443e06faa0b42b69e42705a2f144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardFront: {fileID: 6509898239733893119}
+  CardBack: {fileID: 8834457125103021749}
+  targetFacePoint: {fileID: 7782137338515299558}
+  col: {fileID: 5205433434987195561}
 --- !u!1 &6509898240572980864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,7 +1518,7 @@ GameObject:
   - component: {fileID: 6509898240572980867}
   - component: {fileID: 6509898240572980877}
   - component: {fileID: 6509898240572980866}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Carbon_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1598,7 @@ GameObject:
   - component: {fileID: 6509898240661655172}
   - component: {fileID: 6509898240661655173}
   - component: {fileID: 6509898240661655290}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,17 +1614,16 @@ RectTransform:
   m_GameObject: {fileID: 6509898240661655288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7782137338515299558}
   - {fileID: 6509898239086136487}
   m_Father: {fileID: 6509898240482239903}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 300}
+  m_SizeDelta: {x: 120, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6509898240661655172
 Canvas:
@@ -1632,7 +1643,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1722492091
   m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!114 &6509898240661655173
@@ -1686,7 +1697,7 @@ GameObject:
   - component: {fileID: 2218180293180377107}
   - component: {fileID: 4818023971010831582}
   - component: {fileID: 1513520970481062062}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Frame_I
   m_TagString: Untagged
   m_Icon: {fileID: 0}

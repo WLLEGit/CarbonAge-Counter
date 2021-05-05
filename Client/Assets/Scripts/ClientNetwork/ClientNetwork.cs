@@ -22,11 +22,13 @@ public class ClientNetwork : MonoBehaviour
         Socket.Send(bytes);
     }
 
+    public static ClientNetwork ClientNetworkInstance;
     private Socket Socket;
 
     // Start is called before the first frame update
     void Start()
     {
+        ClientNetworkInstance = this;
         ConnectServer("172.27.153.209", 1357);
     }
 

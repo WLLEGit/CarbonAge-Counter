@@ -31,12 +31,14 @@ public class SlotsManager : MonoBehaviour
 
         foreach (var slot in Slots)
         {
-            RectTransform rect = slot.GetComponent<RectTransform>();
+            Vector3 mousePos = Draggable.DraggableInstanse.MouseInWorldCoords();
+            RectTransform rect = (RectTransform)slot.Find("Canvas");
             Vector3 pos = slot.position;
-            if (Input.mousePosition.x <= pos.x + rect.rect.width / 2 && Input.mousePosition.x >= pos.x - rect.rect.width / 2 &&
-                 Input.mousePosition.y <= pos.y + rect.rect.height / 2 && Input.mousePosition.y >= pos.y - rect.rect.height / 2)
+            if (mousePos.x <= pos.x + rect.rect.width / 2 && mousePos.x >= pos.x - rect.rect.width / 2 &&
+                 mousePos.y <= pos.y + rect.rect.height / 2 && mousePos.y >= pos.y - rect.rect.height / 2)
                 return pos;
         }
         return resVec;
     }
+
 }
