@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: "\u5200\u8015\u706B\u79CD"
   m_EditorClassIdentifier: 
   Description: test
-  name: "\u5200\u8015\u706B\u79CD"
+  Name: 
   Tec: 8
   Mil: 5
   Carbon: 10
   Time: 0
+  Position: {x: -126, y: 237, z: -150}

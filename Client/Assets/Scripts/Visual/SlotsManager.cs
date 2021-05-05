@@ -6,23 +6,24 @@ using UnityEngine.UI;
 public class SlotsManager : MonoBehaviour
 {
     public static bool IsFull;
-    public static SlotsManager ManagerSlots;
-    //public Button CloseButton;
+    public static SlotsManager SlotsManagerInstance;
+    public Button CloseButton;
 
     public Transform[] Slots;
+    private Cards[] SelectedCards;
+
     // Start is called before the first frame update
     void Start()
     {
-        ManagerSlots = this;
+        SlotsManagerInstance = this;
+        SelectedCards = new Cards[Slots.Length];
+        for (int i = 0; i < SelectedCards.Length; ++i)
+            SelectedCards[i] = Cards.DefaultCard;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (IsFull)
-        //    CloseButton.enabled = true;
-        //else
-        //    CloseButton.enabled = false;
     }
 
     public Vector3 TheNearestSlotVector()
@@ -41,4 +42,30 @@ public class SlotsManager : MonoBehaviour
         return resVec;
     }
 
+    public void TryRemove(Cards card)
+    {
+        for(int i = 0; i < SelectedCards.Length; ++i)
+            if(SelectedCards[i] == card)
+            {
+                SelectedCards[i] = Cards.DefaultCard;
+                IsFull = false;
+            }
+    }
+
+    public void TryAdd(Vector3 position)
+    {
+        for (int i = 0; i < Slots.Length; ++i)
+        {
+            if(Slots[i].transform.position == position)
+            {
+                SelectedCards[i] = Cards.DefaultCard;
+                break;
+            }
+        }
+
+        IsFull = true;
+        foreach (var card in SelectedCards)
+            if (card == Cards.DefaultCard)
+                IsFull = false;
+    }
 }

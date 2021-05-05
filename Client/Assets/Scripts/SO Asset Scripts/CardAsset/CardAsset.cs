@@ -10,9 +10,10 @@ public class CardAsset : ScriptableObject
     [Header("Police info")]
     [TextArea(2,3)]
     public string Description;  
-    public string name;
+    public string Name;
 	public int Tec;
     public int Mil;
     public int Carbon;
     public TimeClasses Time;
+    public Vector3 Position;
 }

@@ -104,7 +104,7 @@ public class ClientNetwork : MonoBehaviour
     public void EnterGame(string LeaderName)    //主界面进入游戏
     {
         Send("SetLeader " + LeaderName + "\n");
-    }   
+    }
     public void Exit()  //玩家退出游戏
     {
         Send("Exit\n");

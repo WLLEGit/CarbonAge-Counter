@@ -20,13 +20,14 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp()
     {
         isMoving = false;
-        Vector3 vector3 = SlotsManager.ManagerSlots.TheNearestSlotVector();
+        Vector3 vector3 = SlotsManager.SlotsManagerInstance.TheNearestSlotVector();
         if (vector3.x == 0 && vector3.y == 0)
+        {
             ReturnToPreviousPosition();
+            SlotsManager.SlotsManagerInstance.TryRemove(GetComponent<OneCardManager>().CardType);
+        }
         else
         {
-            Quaternion quaternion = new Quaternion();
-            quaternion.Set(0, 0, 0, 0);
             transform.position = vector3;
         }
     }
@@ -43,7 +44,7 @@ public class Draggable : MonoBehaviour
 
     private void ReturnToPreviousPosition()
     {
-
+        transform.Translate(GetComponent<OneCardManager>().Position - transform.position);
     }
     public Vector3 MouseInWorldCoords()
     {
