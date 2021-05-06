@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CardSceneManager : MonoBehaviour
 {
-    public RectTransform CloseButton;
-    public RectTransform SelectedCardsSection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +15,20 @@ public class CardSceneManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnExitButtonClicked()
+    {
+        if(!SlotsManager.IsFull)
+        {
+            List<string> cardNames = new List<string>();
+            foreach (var card in SlotsManager.SelectedCards)
+                cardNames.Add(card.ToString());
+            ClientNetwork.ClientNetworkInstance.ChangeCardBoard(cardNames);
+        }
+        else
+        {
+            ;
+        }
     }
 }

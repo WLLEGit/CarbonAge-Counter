@@ -29,6 +29,7 @@ public class Draggable : MonoBehaviour
         else
         {
             transform.position = vector3;
+            SlotsManager.SlotsManagerInstance.TryAdd(vector3, GetComponent<OneCardManager>().CardType);
         }
     }
 

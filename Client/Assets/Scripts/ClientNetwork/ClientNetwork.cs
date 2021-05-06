@@ -29,7 +29,7 @@ public class ClientNetwork : MonoBehaviour
     void Start()
     {
         ClientNetworkInstance = this;
-        ConnectServer("172.27.153.209", 1357);
+        ConnectServer("172.27.145.234", 1357);
     }
 
     // Update is called once per frame
@@ -175,5 +175,7 @@ public enum Leaders     //领袖枚举类型
 
 public enum Cards       //卡牌枚举
 {
-    DefaultCard
+    DefaultCard,
+    DaoGengHuoZhong,
+    TanBuJi
 }

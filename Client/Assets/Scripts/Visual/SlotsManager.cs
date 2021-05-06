@@ -10,7 +10,7 @@ public class SlotsManager : MonoBehaviour
     public Button CloseButton;
 
     public Transform[] Slots;
-    private Cards[] SelectedCards;
+    public static Cards[] SelectedCards;
 
     // Start is called before the first frame update
     void Start()
@@ -44,21 +44,21 @@ public class SlotsManager : MonoBehaviour
 
     public void TryRemove(Cards card)
     {
-        for(int i = 0; i < SelectedCards.Length; ++i)
-            if(SelectedCards[i] == card)
+        for (int i = 0; i < SelectedCards.Length; ++i)
+            if (SelectedCards[i] == card)
             {
                 SelectedCards[i] = Cards.DefaultCard;
                 IsFull = false;
             }
     }
 
-    public void TryAdd(Vector3 position)
+    public void TryAdd(Vector3 position, Cards cardType)
     {
         for (int i = 0; i < Slots.Length; ++i)
         {
-            if(Slots[i].transform.position == position)
+            if (System.Math.Abs(Slots[i].position.x - position.x) < 2 && System.Math.Abs(Slots[i].position.y - position.y) < 2)
             {
-                SelectedCards[i] = Cards.DefaultCard;
+                SelectedCards[i] = cardType;
                 break;
             }
         }
