@@ -11,17 +11,6 @@ using System.Linq;
 
 public class ClientNetwork : MonoBehaviour
 {
-    //测试用
-    public Button TestButton;
-    public Text TestText;
-
-    public void TestSendMsg()
-    {
-        string msg = "Test Message";
-        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(msg);
-        Socket.Send(bytes);
-    }
-
     public static ClientNetwork ClientNetworkInstance;
     private Socket Socket;
 
@@ -51,13 +40,15 @@ public class ClientNetwork : MonoBehaviour
         return true;
     }
 
-    private void Listen()
+    private void Listen()         //接收来自服务器的信息
     {
         byte[] buffer = new byte[1000];
         while (true)
         {
             int len = Socket.Receive(buffer);
             var msg = Encoding.UTF8.GetString(buffer, 0, len);
+            if (msg.Length == 0)        //忽略空信息
+                continue;
             Debug.Log("来自服务器的信息：\n" + msg);
             ProcessMsg(msg);
         }

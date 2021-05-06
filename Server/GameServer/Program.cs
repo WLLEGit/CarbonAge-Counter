@@ -54,7 +54,7 @@ namespace GameServer
             }
             EndGame();
         }
-        private void EndTurn()  //结算本回合的点数，启用卡牌
+        private void EndTurn()  //结算本回合的点数，启用卡牌，判断特殊事件
         {
 
         }

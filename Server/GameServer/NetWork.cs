@@ -24,21 +24,6 @@ namespace GameServer
 
     public class Room
     {
-        //测试用
-        int TestInt = 0;
-        private void TestSendMsg(Player p)
-        {
-            List<Command> commands = new List<Command>();
-            Command command = new Command
-            {
-                Target = p,
-                CommandMsg = "Message" + TestInt
-            };
-            commands.Add(command);
-            TestInt++;
-            SendCommands(commands);
-        }
-
         public Socket SeverSocket;
         public Player[] Players = new Player[2];
 

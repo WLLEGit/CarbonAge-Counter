@@ -13,7 +13,9 @@ namespace GameServer
 
     public enum Leaders     //领袖枚举类型
     {
-        DefaultLeader
+        DefaultLeader,
+        Bear,
+        Hawk
     }
 
     public class Leader            //领袖类
