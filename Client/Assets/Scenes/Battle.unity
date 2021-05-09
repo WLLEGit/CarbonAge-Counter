@@ -222,8 +222,8 @@ GameObject:
   - component: {fileID: 69791721}
   - component: {fileID: 69791723}
   - component: {fileID: 69791722}
-  - component: {fileID: 69791724}
   - component: {fileID: 69791725}
+  - component: {fileID: 69791724}
   m_Layer: 5
   m_Name: Battle
   m_TagString: Untagged
@@ -308,9 +308,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 69791720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad9fc37aa2d9a24993b56ea328a1125, type: 3}
+  m_Script: {fileID: 11500000, guid: e086370af83450f45a4eb04db65d15d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player1MilText: {fileID: 566097048}
+  Player1EraText: {fileID: 1913769144}
+  Player1CarText: {fileID: 1251664435}
+  Player2MilText: {fileID: 1503386308}
+  Player2EraText: {fileID: 84040737}
+  Player2CarText: {fileID: 363385760}
 --- !u!114 &69791725
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -104,54 +104,56 @@ public class ClientNetwork : MonoBehaviour
     }
 
     //需要的接口
-    private void RivalChangeCardBoard(object o)
+    public void RivalChangeCardBoard(object o)
     {
 
     }
 
-    private void RivalDealDamage(object o)
+    public void RivalDealDamage(object o)
     {
 
     }
 
-    private void ChangePoints(object o)
+    public void ChangePoints(object o)
+    {
+        string[] strs = (string[])o;
+        PlayerManager.PlayerManagerInstance.Player1SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
+    }
+
+    public void EndGame(object o)
     {
 
     }
 
-    private void EndGame(object o)
+    public void Win(object o)
     {
 
     }
 
-    private void Win(object o)
+    public void Die(object o)
     {
 
     }
 
-    private void Die(object o)
+    public void Lose(object o)
     {
 
     }
 
-    private void Lose(object o)
+    public void StartThisTurn(object o)
     {
 
     }
 
-    private void StartThisTurn(object o)
+    public void RivalSetLeader(object o)
     {
 
     }
 
-    private void RivalSetLeader(object o)
+    public void RivalChangePoints(object o)
     {
-
-    }
-
-    private void RivalChangePoints(object o)
-    {
-
+        string[] strs = (string[])o;
+        PlayerManager.PlayerManagerInstance.Player2SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
     }
 }
 

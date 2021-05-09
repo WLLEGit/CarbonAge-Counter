@@ -11,8 +11,14 @@ public class PlayerManager : MonoBehaviour
     public Text Player2MilText;
     public Text Player2EraText;
     public Text Player2CarText;
+    public static PlayerManager PlayerManagerInstance;
+
+    private void Start()
+    {
+        PlayerManagerInstance = this;
+    }
     // Start is called before the first frame update
-    public void Player1(double era, double mili, double carbon)
+    public void Player1SetPoints(double era, double mili, double carbon)
     {
         string eratext = era.ToString();
         string militext = mili.ToString();
@@ -23,7 +29,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Player2(double era, double mili, double carbon)
+    public void Player2SetPoints(double era, double mili, double carbon)
     {
         string eratext = era.ToString();
         string militext = mili.ToString();
