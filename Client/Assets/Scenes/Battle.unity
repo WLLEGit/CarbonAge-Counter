@@ -311,12 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad9fc37aa2d9a24993b56ea328a1125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1MilText: {fileID: 566097048}
-  Player1EraText: {fileID: 1913769144}
-  Player1CarText: {fileID: 1251664435}
-  Player2MilText: {fileID: 1503386308}
-  Player2EraText: {fileID: 84040737}
-  Player2CarText: {fileID: 363385760}
 --- !u!114 &69791725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fe267040ad67342af2f229ea6c0085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardsButton: {fileID: 1952968333}
 --- !u!1 &84040734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.56}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0094986, y: 0.63860035}
+  m_AnchoredPosition: {x: -1.009491, y: 0.6385956}
   m_SizeDelta: {x: -2.0018, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035115801
@@ -1271,8 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32b22c0eba733b4c9288529b4e93544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodpercent: 0
-  Bloodbar: {fileID: 0}
 --- !u!114 &1145680644
 MonoBehaviour:
   m_ObjectHideFlags: 0

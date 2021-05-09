@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     public void Settings(){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Settings");
     }
     public void OnSelectAndInputDone()
     {
