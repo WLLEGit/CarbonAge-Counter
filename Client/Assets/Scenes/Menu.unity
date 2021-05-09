@@ -3140,6 +3140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84632f988e8f8bd4d8bc854311d05038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputField: {fileID: 283411785}
+  DropdownSelecter: {fileID: 202127240}
+  Buttons: {fileID: 920337218}
+  InputAndSelect: {fileID: 1420392785}
 --- !u!1 &1873069260
 GameObject:
   m_ObjectHideFlags: 0
