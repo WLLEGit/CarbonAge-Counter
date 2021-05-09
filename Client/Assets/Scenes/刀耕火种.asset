@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
   m_Name: "\u5200\u8015\u706B\u79CD"
   m_EditorClassIdentifier: 
-  Description: test
-  Name: DaoGengHuoZhong
+  Description: "\u5200\u8015\u706B\u79CD\uFF1A\u7B2C\u4E8C\u4E16\u4EE3\u53EF\u7528\u3002"
+  Name: "\u5200\u8015\u706B\u79CD"
   Tec: 8
   Mil: 5
   Carbon: 10
   Time: 0
-  Position: {x: -126, y: 237, z: -150}
+  Position: {x: -130, y: 0, z: -150}
