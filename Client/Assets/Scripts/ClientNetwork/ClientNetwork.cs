@@ -18,7 +18,6 @@ public class ClientNetwork : MonoBehaviour
     void Start()
     {
         ClientNetworkInstance = this;
-        ConnectServer("172.27.145.234", 1357);
     }
 
     // Update is called once per frame
@@ -26,7 +25,6 @@ public class ClientNetwork : MonoBehaviour
     {
  
     }
-
     public bool ConnectServer(string ip, int port)
     {
         IPEndPoint point = new IPEndPoint(IPAddress.Parse(ip), port);
