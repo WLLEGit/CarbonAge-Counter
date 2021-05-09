@@ -36,6 +36,8 @@ namespace GameServer
         {
             return leader switch
             {
+                Leaders.Bear => new Leader(leader, 1.1, 0.9, 1),
+                Leaders.Hawk => new Leader(leader, 0.9, 1.1, 1),
                 _ => new Leader(leader, 1, 1, 1),
             };
         }
