@@ -64,14 +64,17 @@
     <Compile Include="Assets\Scripts\Visual\BetterCardRotation.cs" />
     <Compile Include="Assets\Scripts\Visual\CardSceneManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Message.cs" />
+    <Compile Include="Assets\Scripts\battle\Player1Health.cs" />
     <Compile Include="Assets\Scripts\ClientNetwork\ClientNetwork.cs" />
     <Compile Include="Assets\Scripts\Visual\Draggable.cs" />
     <Compile Include="Assets\Scripts\SO Asset Scripts\CharacterAsset\CharacterAsset.cs" />
-    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\battle\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\battle\Player2Health.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Visual\OneCardManager.cs" />
     <Compile Include="Assets\Scripts\Visual\EarthSpin.cs" />
     <Compile Include="Assets\Scripts\Visual\SlotsManager.cs" />
+    <Compile Include="Assets\Scripts\battle\BattleButtons.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
