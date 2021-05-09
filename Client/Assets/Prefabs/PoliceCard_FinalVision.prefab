@@ -866,7 +866,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &2030265961409416971
 MonoBehaviour:
@@ -1257,7 +1257,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 124, y: 184, z: 0.01}
+  m_Size: {x: 140, y: 200, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5423140173366227381
 MonoBehaviour:
