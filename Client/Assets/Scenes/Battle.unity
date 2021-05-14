@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardsButton: {fileID: 1952968333}
+  BattleButtonsInstance: {fileID: 0}
 --- !u!1 &84040734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.56}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.009491, y: 0.6385956}
+  m_AnchoredPosition: {x: -1.0095215, y: 0.63861084}
   m_SizeDelta: {x: -2.0018, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035115801
@@ -1793,7 +1794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 346.7, y: 291.7}
+  m_AnchoredPosition: {x: 350, y: 387}
   m_SizeDelta: {x: 248.1775, y: 120.6749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901118812
@@ -2129,7 +2130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2149,7 +2150,7 @@ Canvas:
   m_GameObject: {fileID: 2006534048}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
