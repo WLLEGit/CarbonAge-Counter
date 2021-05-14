@@ -10,6 +10,10 @@ namespace GameServer
     class BasicClasses
     {
     }
+    public enum SpecialEvents
+    {
+        DefaultSpecialEvent = -1,
+    }
 
     public enum Leaders     //领袖枚举类型
     {
@@ -88,7 +92,7 @@ namespace GameServer
         public Leader Leader;
         public List<Card> Cards;
 
-        public double score;
+        public double score=0;
         public double MilitaryPoints;
         public double EraPoints;
         public double CarbonPoints;
@@ -102,6 +106,7 @@ namespace GameServer
         public string Msg;
 
         private  bool isTurnEnd;
+        private SpecialEvents preEvent = SpecialEvents.DefaultSpecialEvent;
 
         public void StartTurn()
         {
@@ -117,6 +122,30 @@ namespace GameServer
                 }
             }
         }
+        public List<Command> EvaluatePointsChange()
+        {
+            List<Command> commands = new List<Command>();
+            MilitaryPoints -= DeltaMilitaryPoints;
+            CarbonPoints -= DeltaCarbonPoints;
+            EraPoints -= DeltaEraPoints;
+            score = MilitaryPoints + EraPoints * 2 + CarbonPoints * 3;
+            commands.Add(new Command(this, String.Format("ChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
+            commands.Add(new Command(Room.AnotherPlayer(this), String.Format("RivalChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
+            return commands;
+        }
+        public SpecialEvents GenerateSpecialEvent()
+        {
+            foreach(SpecialEvents specialEvents in Enum.GetValues(typeof(SpecialEvents)))
+            {
+                if(specialEvents > preEvent && (int)specialEvents < CarbonPoints)
+                {
+                    preEvent = specialEvents;
+                    return specialEvents;
+                }
+            }
+            return SpecialEvents.DefaultSpecialEvent;
+        }
+
 
         public void ProcessMessage(string msg)
         {
@@ -164,6 +193,8 @@ namespace GameServer
                 new Command() { Target = Room.AnotherPlayer(this), CommandMsg = "RivalDealDamage " + Attack }
             };
             Room.AnotherPlayer(this).Health -= Attack;
+            if (Room.AnotherPlayer(this).Health <= 0)
+                commands.Add(new Command(Room.AnotherPlayer(this), "Die"));
             return commands;
         }
         public void StartThisTurn()

@@ -8,6 +8,11 @@ public class BattleButtons : MonoBehaviour
 {
     public Button CardsButton;
     public static bool useable = true;
+    public BattleButtons BattleButtonsInstance;
+    private void Start()
+    {
+        BattleButtonsInstance = this;
+    }
     // Start is called before the first frame update
     public void Settings(){
             SceneManager.LoadScene("Settings");

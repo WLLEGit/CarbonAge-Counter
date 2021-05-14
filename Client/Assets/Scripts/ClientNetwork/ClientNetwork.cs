@@ -104,14 +104,11 @@ public class ClientNetwork : MonoBehaviour
     }
 
     //需要的接口
-    public void RivalChangeCardBoard(object o)
-    {
-
-    }
 
     public void RivalDealDamage(object o)
     {
-
+        int attack = int.Parse(((string[])o)[1]);
+        PlayerManager.PlayerManagerInstance.Player1BeenAttacked(attack);
     }
 
     public void ChangePoints(object o)
@@ -119,41 +116,41 @@ public class ClientNetwork : MonoBehaviour
         string[] strs = (string[])o;
         PlayerManager.PlayerManagerInstance.Player1SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
     }
-
-    public void EndGame(object o)
-    {
-
-    }
-
-    public void Win(object o)
-    {
-
-    }
-
-    public void Die(object o)
-    {
-
-    }
-
-    public void Lose(object o)
-    {
-
-    }
-
-    public void StartThisTurn(object o)
-    {
-
-    }
-
-    public void RivalSetLeader(object o)
-    {
-
-    }
-
     public void RivalChangePoints(object o)
     {
         string[] strs = (string[])o;
         PlayerManager.PlayerManagerInstance.Player2SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
+    }
+
+    public void Win(object o)
+    {
+        Battle.BattleInstance.Win();
+    }
+
+    public void Die(object o)
+    {
+        Battle.BattleInstance.Die();
+    }
+
+    public void Lose(object o)
+    {
+        Battle.BattleInstance.Lose();
+    }
+
+    public void StartThisTurn(object o)
+    {
+        Battle.BattleInstance.StartTurn();
+    }
+
+    public void RivalSetLeader(object o)
+    {
+        Enum.TryParse<Leaders>(((string[])o)[1], out Leaders leaderType);
+        PlayerManager.PlayerManagerInstance.Player2SetLeader(leaderType);
+    }
+
+    public void TransitionTurn(object o)
+    {
+        Battle.BattleInstance.StartTransitionGame();
     }
 }
 

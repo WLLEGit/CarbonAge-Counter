@@ -3,10 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class battle : MonoBehaviour
+public class Battle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void Settings(){
-        SceneManager.LoadScene(2);
+    public static Battle BattleInstance;
+    private void Start()
+    {
+        BattleInstance = this;
+    }
+    public void Win()
+    {
+
+    }
+    public void Die()
+    {
+
+    }
+    public void Lose()
+    {
+
+    }
+    public void StartTurn() //启用CardsButton，显示开始弹出框
+    {
+
+    }
+    public void StartTransitionGame()   //启动过渡小游戏
+    {
+
     }
 }

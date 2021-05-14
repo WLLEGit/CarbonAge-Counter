@@ -38,4 +38,13 @@ public class PlayerManager : MonoBehaviour
         Player2EraText.text = militext;
         Player2CarText.text = cartext;
     }
+
+    public void Player2SetLeader(Leaders leaderType)
+    {
+
+    }
+    public void Player1BeenAttacked(int amount)
+    {
+
+    }
 }

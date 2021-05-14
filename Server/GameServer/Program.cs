@@ -33,6 +33,8 @@ namespace GameServer
         public int TurnCount = 0;
         public Room Room;
 
+        private readonly int criticalCarbonPoints = 100;
+
         public void StartGame(Room room)
         {
             Room = room;
@@ -56,15 +58,71 @@ namespace GameServer
         }
         private void EndTurn()  //结算本回合的点数，启用卡牌，判断特殊事件
         {
+            List<Command> commands = new List<Command>();
+            var resCommands = Room.Players[0].EvaluatePointsChange();
+            foreach (var command in resCommands)
+                commands.Add(command);
+            resCommands = Room.Players[1].EvaluatePointsChange();
+            foreach (var command in resCommands)
+                commands.Add(command);
 
+            if(Room.Players[0].CarbonPoints > Room.Players[1].CarbonPoints)
+            {
+                if (Room.Players[0].CarbonPoints >= criticalCarbonPoints)
+                {
+                    commands.Add(new Command(Room.Players[0], "Lose"));
+                    commands.Add(new Command(Room.Players[1], "Win"));
+                }
+            }
+            else if(Room.Players[0].CarbonPoints == Room.Players[1].CarbonPoints)
+            {
+                if (Room.Players[0].CarbonPoints >= criticalCarbonPoints)
+                {
+                    commands.Add(new Command(Room.Players[0], "Lose"));
+                    commands.Add(new Command(Room.Players[1], "Lose"));
+                }
+            }
+            else
+                if (Room.Players[1].CarbonPoints >= criticalCarbonPoints)
+                {
+                    commands.Add(new Command(Room.Players[1], "Lose"));
+                    commands.Add(new Command(Room.Players[0], "Win"));
+                }
+
+            var tmpEvent = Room.Players[0].GenerateSpecialEvent();
+            if (tmpEvent != SpecialEvents.DefaultSpecialEvent)
+                commands.Add(new Command(Room.Players[0], "StartSpecialEvent " + tmpEvent.ToString()));
+            tmpEvent = Room.Players[1].GenerateSpecialEvent();
+            if (tmpEvent != SpecialEvents.DefaultSpecialEvent)
+                commands.Add(new Command(Room.Players[1], "StartSpecialEvent " + tmpEvent.ToString()));
+
+            Room.SendCommands(commands);
         }
         private void TransitionTurn()   
         {
-
+            List<Command> commands = new List<Command>();
+            commands.Add(new Command(Room.Players[0], "TransitionTurn"));
+            commands.Add(new Command(Room.Players[1], "TransitionTurn"));
+            Room.SendCommands(commands);
         }
         private void EndGame()
         {
-
+            List<Command> commands = new List<Command>();
+            if (Room.Players[0].score > Room.Players[1].score)
+            {
+                commands.Add(new Command(Room.Players[1], "Lose"));
+                commands.Add(new Command(Room.Players[0], "Win"));
+            }
+            else if (Room.Players[0].score == Room.Players[1].score)
+            {
+                commands.Add(new Command(Room.Players[0], "Lose"));
+                commands.Add(new Command(Room.Players[1], "Lose"));
+            }
+            else
+            {
+                commands.Add(new Command(Room.Players[0], "Lose"));
+                commands.Add(new Command(Room.Players[1], "Win"));
+            }
         }
     }
 }

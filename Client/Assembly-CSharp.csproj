@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\Visual\CarbonProgressBarManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\InitButton.cs" />
     <Compile Include="Assets\Scripts\SO Asset Scripts\CardAsset\CardAsset.cs" />
-    <Compile Include="Assets\Scripts\battle\battle.cs" />
+    <Compile Include="Assets\Scripts\battle\Battle.cs" />
     <Compile Include="Assets\Planet Earth Free\SpinFree.cs" />
     <Compile Include="Assets\Scripts\Visual\BetterCardRotation.cs" />
     <Compile Include="Assets\Scripts\Visual\CardSceneManager.cs" />
