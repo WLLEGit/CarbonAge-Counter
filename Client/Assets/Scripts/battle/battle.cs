@@ -2,32 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using System;
 
 public class Battle : MonoBehaviour
 {
     public static Battle BattleInstance;
-    private void Start()
+    public static string outputpath = @"./CarbonAge-Counter/Game/app.exe";
+    public GameObject win;
+    public GameObject lose;
+    public GameObject die;
+    void Start()
     {
         BattleInstance = this;
     }
     public void Win()
     {
-
+        win = GameObject.Find("Win");
+        win.SetActive(true);
     }
     public void Die()
     {
-
+        die = GameObject.Find("Die");
+          die.SetActive(true);
     }
     public void Lose()
     {
-
+        lose = GameObject.Find("Lose");
+           lose.SetActive(true);
     }
-    public void StartTurn() //ÆôÓÃCardsButton£¬ÏÔÊ¾¿ªÊ¼µ¯³ö¿ò
+    public void StartTurn() //ï¿½ï¿½ï¿½ï¿½CardsButtonï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
-
+        BattleButtons.ButtonButtonsInstance.CanUse();
     }
-    public void StartTransitionGame()   //Æô¶¯¹ý¶ÉÐ¡ÓÎÏ·
+    public void StartTransitionGame()   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ï·
     {
-
+        Process.Start(outputpath);
     }
 }

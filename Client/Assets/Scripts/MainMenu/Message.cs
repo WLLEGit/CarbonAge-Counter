@@ -11,7 +11,7 @@ public class Message : MonoBehaviour
         gameObject.SetActive(true); 
     }
     public void Exit(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
 }
