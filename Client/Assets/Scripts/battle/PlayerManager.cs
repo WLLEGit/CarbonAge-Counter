@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public Text Player2EraText;
     public Text Player2CarText;
     public static PlayerManager PlayerManagerInstance;
+    public static bool isRivalPlayerSet = false;
 
     private void Start()
     {
@@ -41,7 +42,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Player2SetLeader(Leaders leaderType)
     {
-
+        isRivalPlayerSet = true;
     }
     public void Player1BeenAttacked(int amount)
     {

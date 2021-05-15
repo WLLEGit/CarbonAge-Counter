@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class MainMenu : MonoBehaviour
     public RectTransform Buttons;
     public RectTransform InputAndSelect;
 
+
     public void PlayGame(){
-        StartCoroutine(TranslateButtonsSmoothly(100));
+        StartCoroutine(TranslateButtonsSmoothly(200));
     }
     public void QuitGame(){
         Application.Quit();
@@ -24,8 +26,7 @@ public class MainMenu : MonoBehaviour
     {
         ClientNetwork.ClientNetworkInstance.ConnectServer(InputField.text, 1357);
         ClientNetwork.ClientNetworkInstance.EnterGame(DropdownSelecter.options[DropdownSelecter.value].text);
-        SceneManager.LoadScene("Battle");
-        InputAndSelect.gameObject.SetActive(false);
+        StartCoroutine(WaitToStartGame());
     }
     private IEnumerator TranslateButtonsSmoothly(int dis)
     {
@@ -35,5 +36,11 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
         InputAndSelect.gameObject.SetActive(true);
+    }
+    private IEnumerator WaitToStartGame()
+    {
+        EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
+        yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
+        SceneManager.LoadScene("Battle");
     }
 }
