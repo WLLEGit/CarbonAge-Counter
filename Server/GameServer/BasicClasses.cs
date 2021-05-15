@@ -51,7 +51,17 @@ namespace GameServer
     {
         DefaultCard,
         DaoGengHuoZhong,
-        TanBuJi
+        TanBuJi,
+        BaoHuDiQiu,
+        YuanZiNeng,
+        XinNengYuan,
+        ZhiShuZaoLin,
+        DianLi,
+        XuMuYe,
+        KuangChanKaiCai,
+        JieYueLiYong,
+        ZhengQiDongLi,
+        ZiYuanXunHuan
     }
 
     public class Card       //卡牌类
@@ -59,20 +69,33 @@ namespace GameServer
         public double MilitaryDelta;
         public double EraDelta;
         public double CarbonDelta;
+        public double CarbonRate;
 
-        public Card(double miliDelta, double eraDelta, double carbonDelta)
+        public Card(double miliDelta, double eraDelta, double carbonDelta, double carbonRate=1)
         {
             MilitaryDelta = miliDelta;
             EraDelta = eraDelta;
             CarbonDelta = carbonDelta;
+            CarbonRate = carbonRate;
         }
         public static Card GetCard(Cards card)
         {
             return card switch
             {
-                Cards.DaoGengHuoZhong => new Card(8,5,10),
-                Cards.TanBuJi => new Card(0,0,-100),
-                _ => new Card(0, 0, 0)
+                Cards.DefaultCard => new Card(0, 0, 0),
+                Cards.DaoGengHuoZhong => new Card(8, 20, 25),
+                Cards.TanBuJi => new Card(-20, 20, -100),
+                Cards.BaoHuDiQiu => new Card(0, 50, -50),
+                Cards.YuanZiNeng => new Card(90, 30, 60),
+                Cards.XinNengYuan => new Card(20, 35, -10),
+                Cards.ZhiShuZaoLin => new Card(0, 20, -40),
+                Cards.DianLi => new Card(60, 20, 60),
+                Cards.XuMuYe => new Card(6, 10, 8),
+                Cards.KuangChanKaiCai => new Card(15, 15, 25),
+                Cards.JieYueLiYong => new Card(0, 20, 0),
+                Cards.ZhengQiDongLi => new Card(20, 40, 40),
+                Cards.ZiYuanXunHuan => new Card(0, 30, 0, 0.5),
+                _ => throw new NotImplementedException(),
             };
         }
     }
@@ -99,6 +122,7 @@ namespace GameServer
         public double DeltaMilitaryPoints;
         public double DeltaEraPoints;
         public double DeltaCarbonPoints;
+        public double CardCarbonRate;
 
         public double Health = 100;
         public double Attack = 0;
@@ -125,9 +149,9 @@ namespace GameServer
         public List<Command> EvaluatePointsChange()
         {
             List<Command> commands = new List<Command>();
-            MilitaryPoints -= DeltaMilitaryPoints;
-            CarbonPoints -= DeltaCarbonPoints;
-            EraPoints -= DeltaEraPoints;
+            MilitaryPoints += DeltaMilitaryPoints * Leader.MilitaryBonusRate;
+            CarbonPoints += DeltaCarbonPoints * Leader.CarbonBonusRate * CardCarbonRate;
+            EraPoints += DeltaEraPoints * Leader.EraBonusRate;
             score = MilitaryPoints + EraPoints * 2 + CarbonPoints * 3;
             commands.Add(new Command(this, String.Format("ChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
             commands.Add(new Command(Room.AnotherPlayer(this), String.Format("RivalChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
@@ -145,7 +169,18 @@ namespace GameServer
             }
             return SpecialEvents.DefaultSpecialEvent;
         }
-
+        private void EvaluateCardsProperty()
+        {
+            DeltaCarbonPoints = DeltaEraPoints = DeltaMilitaryPoints = 0;
+            CardCarbonRate = 1;
+            foreach(var card in Cards)
+            {
+                DeltaCarbonPoints += card.CarbonDelta;
+                DeltaEraPoints += card.EraDelta;
+                DeltaMilitaryPoints += card.MilitaryDelta;
+                CardCarbonRate *= card.CarbonRate;
+            }
+        }
 
         public void ProcessMessage(string msg)
         {
@@ -175,15 +210,13 @@ namespace GameServer
             string[] args = o as string[];
             List<Command> commands = new List<Command>();
             Cards.Clear();
-            string cmdMsg = new string("RivalSetCardBoard ");
             foreach (string cardName in args)
             {
                 if (cardName == "SetCardBoard")
                     continue;
-                cmdMsg += cardName + " ";
                 Cards.Add(Card.GetCard((Cards)System.Enum.Parse(typeof(Cards), cardName)));
             }
-            commands.Add(new Command() { Target = Room.AnotherPlayer(this), CommandMsg = cmdMsg });
+            EvaluateCardsProperty();
             return commands;
         }
         public List<Command> DealDamage(object o)

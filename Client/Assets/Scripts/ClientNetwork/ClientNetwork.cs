@@ -32,22 +32,22 @@ public class ClientNetwork : MonoBehaviour
         Socket.Connect(point);
         if (!Socket.Connected)
             return false;
-        Debug.Log("���������ӳɹ�");
+        Debug.Log("Sever Connected Successfully!");
         Thread listener = new Thread(Listen);
         listener.Start();
         return true;
     }
 
-    private void Listen()         //�������Է���������Ϣ
+    private void Listen()         
     {
         byte[] buffer = new byte[1000];
         while (true)
         {
             int len = Socket.Receive(buffer);
             var msg = Encoding.UTF8.GetString(buffer, 0, len);
-            if (msg.Length == 0)        //���Կ���Ϣ
+            if (msg.Length == 0)        //Ignore Empty Message
                 continue;
-            Debug.Log("���Է���������Ϣ��\n" + msg);
+            Debug.Log("Receive Message From Sever: \n" + msg);
             ProcessMsg(msg);
         }
     }
@@ -60,7 +60,7 @@ public class ClientNetwork : MonoBehaviour
     private void ProcessMsg(string msg)
     {
         string[] lines = msg.Split('\n');
-        lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //ɾ������
+        lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //Remove Empty Line
         foreach (var line in lines)
         {
             string[] tokens = line.Split(' ');
@@ -68,13 +68,14 @@ public class ClientNetwork : MonoBehaviour
             var method = t.GetMethod(tokens[0]);
 
             if (method == null)
-                Debug.LogError("�޷������ĺ�����" + tokens[0]);
+                Debug.LogError("Can't Resolve Fuction: " + tokens[0]);
             else
                 method.Invoke(this, new object[] { tokens});
         }
     }
-    //�ṩ�Ľӿ�
-    public void ChangeCardBoard(List<string> cardNames) //��Ҹı俨�Ʋ�
+    
+    //Offerred Interface
+    public void ChangeCardBoard(List<string> cardNames) //Player Change Cards
     {
         string msg = "SetCardBoard ";
         foreach(string cardName in cardNames)
@@ -82,28 +83,28 @@ public class ClientNetwork : MonoBehaviour
         msg += "\n";
         Send(msg);
     }  
-    public void DealDamage()    //��ҽ��й���
+    public void DealDamage()    //Player Deal Damage
     {
         Send("DealDamage\n");
     }   
-    public void EndThisTurn()   //��ҽ������غ�
+    public void EndThisTurn()   //Player End Turn
     {
         Send("EndThisTurn\n");
     }   
-    public void EnterGame(string LeaderName)    //�����������Ϸ
+    public void EnterGame(string LeaderName)    //Begin Game from Menu
     {
         Send("SetLeader " + LeaderName + "\n");
     }
-    public void Exit()  //����˳���Ϸ
+    public void Exit()  //Player Quit Game
     {
         Send("Exit\n");
     }          
-    public void PlayerChangePoints(double deltaMiliPoints, double deltaEraPoints, double deltaCarbonPoints) //�ı����
+    public void PlayerChangePoints(double deltaMiliPoints, double deltaEraPoints, double deltaCarbonPoints) //Change Score
     {
         Send("ChangePoints " + deltaMiliPoints + " " + deltaEraPoints + " " + deltaCarbonPoints + "\n");
     }
 
-    //��Ҫ�Ľӿ�
+    //Call Funcs in Other Scenes
 
     public void RivalDealDamage(object o)
     {
@@ -154,14 +155,14 @@ public class ClientNetwork : MonoBehaviour
     }
 }
 
-public enum Leaders     //����ö������
+public enum Leaders     //Leaders For Players to Choose
 {
     DefaultLeader,
-    Bear,       //ë��
-    Hawk        //ӥ��
+    Bear,       
+    Hawk        
 }
 
-public enum Cards       //����ö��
+public enum Cards       //All Cards in Game
 {
     DefaultCard,
     DaoGengHuoZhong,
