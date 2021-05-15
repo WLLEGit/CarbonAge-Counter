@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
+  m_Name: "\u8282\u7EA6\u5229\u7528"
+  m_EditorClassIdentifier: 
+  Description: "\u4E2D\u671F\u8F85\u52A9\u578B\u653F\u7B56\uFF1A\u4F7F\u5F97\u6240\u6709\u78B3\u6392\u653E\u6D88\u8017\u51CF35%\u3002\n\u8FD9\u4E5F\u8BB8\u5E76\u4E0D\u662F\u81EA\u53D1\u7684\u89C9\u609F\uFF0C\u800C\u53EA\u662F\u5904\u4E8E\u8D44\u6E90\u532E\u4E4F\u7684\u65E0\u5948\n\u4F46\u5B83\u5374\u5728\u5BA2\u89C2\u4E0A\u51CF\u5C11\u4E86\u6392\u653E\uFF0C\u5E76\u4E14\u5012\u903C\u4EBA\u4EEC\u5BFB\u627E\u65B0\u7684\u6280\u672F\u3002"
+  Name: JieYueLiYong
+  Tec: 20
+  Mil: 0
+  Carbon: 0
+  Time: 1
+  Position: {x: 380, y: 240, z: 0}

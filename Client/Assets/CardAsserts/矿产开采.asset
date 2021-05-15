@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
-  m_Name: "\u5200\u8015\u706B\u79CD"
+  m_Name: "\u77FF\u4EA7\u5F00\u91C7"
   m_EditorClassIdentifier: 
-  Description: "\u5200\u8015\u706B\u79CD\uFF1A\u7B2C\u4E8C\u4E16\u4EE3\u53EF\u7528\u3002"
-  Name: DaoGengHuoZhong
-  Tec: 8
-  Mil: 5
-  Carbon: 10
+  Description: "\u6700\u53E4\u8001\u7684\u751F\u65B9\u5F0F\u4E4B\u4E00\u3002\n\u80FD\u591F\u663E\u589E\u5F3A\u56FD\u529B\uFF0C\u5E76\u4FC3\u8FDB\u751F\u4EA7\u529B\u53D1\u5C55\u3002\n\u4EE3\u4EF7\u662F\u5BF9\u81EA\u7136\u7834\u574F\u5DE8\u5927\u3002"
+  Name: KuangChanKaiCai
+  Tec: 15
+  Mil: 15
+  Carbon: 25
   Time: 0
-  Position: {x: -130, y: 0, z: -150}
+  Position: {x: -140, y: -240, z: 0}

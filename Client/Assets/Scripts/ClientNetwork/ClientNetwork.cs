@@ -32,22 +32,22 @@ public class ClientNetwork : MonoBehaviour
         Socket.Connect(point);
         if (!Socket.Connected)
             return false;
-        Debug.Log("·þÎñÆ÷Á¬½Ó³É¹¦");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³É¹ï¿½");
         Thread listener = new Thread(Listen);
         listener.Start();
         return true;
     }
 
-    private void Listen()         //½ÓÊÕÀ´×Ô·þÎñÆ÷µÄÐÅÏ¢
+    private void Listen()         //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
     {
         byte[] buffer = new byte[1000];
         while (true)
         {
             int len = Socket.Receive(buffer);
             var msg = Encoding.UTF8.GetString(buffer, 0, len);
-            if (msg.Length == 0)        //ºöÂÔ¿ÕÐÅÏ¢
+            if (msg.Length == 0)        //ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ï¢
                 continue;
-            Debug.Log("À´×Ô·þÎñÆ÷µÄÐÅÏ¢£º\n" + msg);
+            Debug.Log("ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½\n" + msg);
             ProcessMsg(msg);
         }
     }
@@ -60,7 +60,7 @@ public class ClientNetwork : MonoBehaviour
     private void ProcessMsg(string msg)
     {
         string[] lines = msg.Split('\n');
-        lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //É¾³ý¿ÕÐÐ
+        lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         foreach (var line in lines)
         {
             string[] tokens = line.Split(' ');
@@ -68,13 +68,13 @@ public class ClientNetwork : MonoBehaviour
             var method = t.GetMethod(tokens[0]);
 
             if (method == null)
-                Debug.LogError("ÎÞ·¨½âÎöµÄº¯Êý£º" + tokens[0]);
+                Debug.LogError("ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½" + tokens[0]);
             else
                 method.Invoke(this, new object[] { tokens});
         }
     }
-    //Ìá¹©µÄ½Ó¿Ú
-    public void ChangeCardBoard(List<string> cardNames) //Íæ¼Ò¸Ä±ä¿¨ÅÆ²Û
+    //ï¿½á¹©ï¿½Ä½Ó¿ï¿½
+    public void ChangeCardBoard(List<string> cardNames) //ï¿½ï¿½Ò¸Ä±ä¿¨ï¿½Æ²ï¿½
     {
         string msg = "SetCardBoard ";
         foreach(string cardName in cardNames)
@@ -82,28 +82,28 @@ public class ClientNetwork : MonoBehaviour
         msg += "\n";
         Send(msg);
     }  
-    public void DealDamage()    //Íæ¼Ò½øÐÐ¹¥»÷
+    public void DealDamage()    //ï¿½ï¿½Ò½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½
     {
         Send("DealDamage\n");
     }   
-    public void EndThisTurn()   //Íæ¼Ò½áÊø±¾»ØºÏ
+    public void EndThisTurn()   //ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øºï¿½
     {
         Send("EndThisTurn\n");
     }   
-    public void EnterGame(string LeaderName)    //Ö÷½çÃæ½øÈëÓÎÏ·
+    public void EnterGame(string LeaderName)    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·
     {
         Send("SetLeader " + LeaderName + "\n");
     }
-    public void Exit()  //Íæ¼ÒÍË³öÓÎÏ·
+    public void Exit()  //ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½Ï·
     {
         Send("Exit\n");
     }          
-    public void PlayerChangePoints(double deltaMiliPoints, double deltaEraPoints, double deltaCarbonPoints) //¸Ä±äµãÊý
+    public void PlayerChangePoints(double deltaMiliPoints, double deltaEraPoints, double deltaCarbonPoints) //ï¿½Ä±ï¿½ï¿½ï¿½ï¿½
     {
         Send("ChangePoints " + deltaMiliPoints + " " + deltaEraPoints + " " + deltaCarbonPoints + "\n");
     }
 
-    //ÐèÒªµÄ½Ó¿Ú
+    //ï¿½ï¿½Òªï¿½Ä½Ó¿ï¿½
 
     public void RivalDealDamage(object o)
     {
@@ -154,16 +154,26 @@ public class ClientNetwork : MonoBehaviour
     }
 }
 
-public enum Leaders     //ÁìÐäÃ¶¾ÙÀàÐÍ
+public enum Leaders     //ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
     DefaultLeader,
-    Bear,       //Ã«ÐÜ
-    Hawk        //Ó¥½´
+    Bear,       //Ã«ï¿½ï¿½
+    Hawk        //Ó¥ï¿½ï¿½
 }
 
-public enum Cards       //¿¨ÅÆÃ¶¾Ù
+public enum Cards       //ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½
 {
     DefaultCard,
     DaoGengHuoZhong,
-    TanBuJi
+    TanBuJi,
+    BaoHuDiQiu,
+    XuMuYe,
+    DianLi,
+    ZhiShuZaoLin,
+    YuanZiNeng,
+    XinNengYuan,
+    KuangChanKaiCai,
+    JieYueLiYong,
+    ZhengQiDongLi,
+    ZiYuanXunHuan
 }

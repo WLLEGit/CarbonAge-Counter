@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
+  m_Name: "\u65B0\u80FD\u6E90"
+  m_EditorClassIdentifier: 
+  Description: "\u6700\u7EC8\u65F6\u4EE3\u751F\u4EA7\u6280\u672F\u3002\n\u65B0\u80FD\u6E90\uFF0C\u53EF\u6301\u7EED\u53D1\u5C55\uFF0C\u4EBA\u4EEC\u6B63\u5728\u5411\u7740\u672A\u6765\u65F6\u4EE3\u7A33\u6B65\u8FC8\u8FDB\u3002\n\u8FD9\u4E5F\u8BB8\u5C31\u662F\u4EBA\u7C7B\u7684\u6551\u8D4E\u5427\u3002"
+  Name: XinNengYuan
+  Tec: 35
+  Mil: 20
+  Carbon: -10
+  Time: 2
+  Position: {x: 380, y: -240, z: 0}

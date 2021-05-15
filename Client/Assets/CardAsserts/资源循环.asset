@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
+  m_Name: "\u8D44\u6E90\u5FAA\u73AF"
+  m_EditorClassIdentifier: 
+  Description: "\u6700\u7EC8\u65F6\u4EE3\u8F85\u52A9\u578B\u653F\u7B56\uFF0C\u6240\u6709\u5361\u724C\u78B3\u6D88\u8017\u51CF\u5C1150%\u3002\n\u5FAA\u73AF\u5229\u7528\uFF0C\u6CE8\u5165\u5783\u573E\u5206\u7C7B\uFF0C\u8D44\u6E90\u518D\u751F\u3002\n\u7B80\u5355\u800C\u6709\u6548\u7684\u505A\u6CD5\u540E\u9700\u8981\u5927\u91CF\u7684\u5B9E\u8DF5\u3002\n\u6559\u80B2\uFF0C\u5BA3\u4F20\uFF0C\u6280\u672F\uFF0C\u8FD9\u4E9B\u90FD\u662F\u6210\u529F\u7684\u5FAA\u73AF\u653F\u7B56\u80CC\u540E\u7684\u52AA\u529B\u3002"
+  Name: ZiYuanXunHuan
+  Tec: 30
+  Mil: 0
+  Carbon: 0
+  Time: 2
+  Position: {x: 630, y: 0, z: 0}

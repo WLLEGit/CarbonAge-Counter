@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
+  m_Name: "\u5200\u8015\u706B\u79CD"
+  m_EditorClassIdentifier: 
+  Description: "\u6700\u65E9\u7684\u751F\u4EA7\u65B9\u5F0F\u4E4B\u4E00\u3002\n\u52AB\u63A0\u5F0F\u7684\u5BF9\u81EA\u7136\u8FDB\u884C\u5F00\u53D1\u5229\u7528\u3002\n\u80FD\u591F\u5FEB\u901F\u62D3\u5C55\u571F\u5730\u5E76\u4FC3\u8FDB\u751F\u4EA7\u529B\u63D0\u9AD8\u3002\n\u7136\u800C\u5BF9\u81EA\u7136\u7684\u7834\u574F\u4E5F\u5DE8\u5927\u96BE\u4EE5\u9006\u8F6C"
+  Name: DaoGengHuoZhong
+  Tec: 20
+  Mil: 8
+  Carbon: 25
+  Time: 0
+  Position: {x: -140, y: 240, z: 0}

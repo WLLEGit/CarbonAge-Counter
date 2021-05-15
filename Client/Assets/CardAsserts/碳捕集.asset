@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fab05bf6cf46064ea7b4752bbfe67c8, type: 3}
   m_Name: "\u78B3\u6355\u96C6"
   m_EditorClassIdentifier: 
-  Description: "\u672A\u6765\u65F6\u4EE3\u53EF\u7528"
-  name: "\u78B3\u6355\u96C6"
-  Tec: 0
-  Mil: 0
+  Description: "\u6700\u7EC8\u65F6\u4EE3\u6280\u672F\u3002\n\u4EBA\u4EEC\u7EC8\u4E8E\u610F\u8BC6\u5230\u4E86\u5F25\u8865\u78B3\u503A\u52A1\u7684\u91CD\u8981\u6027\u3002\n\u4EE3\u4EF7\u9AD8\u6602\uFF0C\u4F46\u8FD9\u662F\u5FC5\u8981\u7684\u727A\u7272\u3002"
+  Name: TanBuJi
+  Tec: 20
+  Mil: -20
   Carbon: -100
-  Time: 0
+  Time: 2
+  Position: {x: 630, y: -240, z: 0}
