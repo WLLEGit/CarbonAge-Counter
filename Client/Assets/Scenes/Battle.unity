@@ -417,7 +417,6 @@ GameObject:
   - component: {fileID: 84040735}
   - component: {fileID: 84040738}
   - component: {fileID: 84040737}
-  - component: {fileID: 84040736}
   m_Layer: 5
   m_Name: Play2time
   m_TagString: Untagged
@@ -444,18 +443,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.17456055, y: -0.070007324}
   m_SizeDelta: {x: 0.3492, y: -0.27}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &84040736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84040734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b28730a2706ec4680cc685bee09124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &84040737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1411,7 +1398,6 @@ GameObject:
   - component: {fileID: 566097046}
   - component: {fileID: 566097049}
   - component: {fileID: 566097048}
-  - component: {fileID: 566097047}
   m_Layer: 5
   m_Name: Play1military
   m_TagString: Untagged
@@ -1438,18 +1424,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.27667236, y: 1.9899902}
   m_SizeDelta: {x: 0.6732788, y: -0.8499756}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &566097047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566097045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d768d67c48df447bd052c574ec250c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &566097048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2028,7 +2002,6 @@ GameObject:
   - component: {fileID: 1251664433}
   - component: {fileID: 1251664436}
   - component: {fileID: 1251664435}
-  - component: {fileID: 1251664434}
   m_Layer: 5
   m_Name: Play1carbon
   m_TagString: Untagged
@@ -2055,18 +2028,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5.089966, y: 0.77996826}
   m_SizeDelta: {x: -3.9000244, y: 1.5599976}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1251664434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251664432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d768d67c48df447bd052c574ec250c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1251664435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,7 +2302,6 @@ GameObject:
   - component: {fileID: 1503386306}
   - component: {fileID: 1503386309}
   - component: {fileID: 1503386308}
-  - component: {fileID: 1503386307}
   m_Layer: 5
   m_Name: Play2mlitary
   m_TagString: Untagged
@@ -2368,18 +2328,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.6204834, y: -0.42999268}
   m_SizeDelta: {x: 2.7373047, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1503386307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503386305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b28730a2706ec4680cc685bee09124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1503386308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2957,7 +2905,6 @@ GameObject:
   - component: {fileID: 1913769142}
   - component: {fileID: 1913769145}
   - component: {fileID: 1913769144}
-  - component: {fileID: 1913769143}
   m_Layer: 5
   m_Name: Play1time
   m_TagString: Untagged
@@ -2984,18 +2931,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.5372314, y: 1.9886475}
   m_SizeDelta: {x: -3.2000732, y: -0.8526001}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1913769143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913769141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d768d67c48df447bd052c574ec250c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1913769144
 MonoBehaviour:
   m_ObjectHideFlags: 0
