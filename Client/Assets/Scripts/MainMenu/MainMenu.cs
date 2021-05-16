@@ -12,7 +12,16 @@ public class MainMenu : MonoBehaviour
     public RectTransform Buttons;
     public RectTransform InputAndSelect;
 
+    public static AsyncOperation asyncBattle;
+    public static AsyncOperation asyncClientNetWork;
 
+    private void Start()
+    {
+        asyncBattle = SceneManager.LoadSceneAsync("Battle");
+        asyncBattle.allowSceneActivation = false;
+        asyncClientNetWork = SceneManager.LoadSceneAsync("ClientNetwork");
+        asyncClientNetWork.allowSceneActivation = false;
+    }
     public void PlayGame(){
         StartCoroutine(TranslateButtonsSmoothly(200));
     }
@@ -41,6 +50,6 @@ public class MainMenu : MonoBehaviour
     {
         EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
         yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
-        SceneManager.LoadScene("Battle");
+        asyncBattle.allowSceneActivation = true;
     }
 }

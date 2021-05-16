@@ -56,20 +56,23 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\battle\WinButton.cs" />
     <Compile Include="Assets\Scripts\Visual\CarbonProgressBarManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\InitButton.cs" />
     <Compile Include="Assets\Scripts\SO Asset Scripts\CardAsset\CardAsset.cs" />
-    <Compile Include="Assets\Scripts\battle\Battle.cs" />
+    <Compile Include="Assets\Scripts\battle\battle.cs" />
     <Compile Include="Assets\Planet Earth Free\SpinFree.cs" />
     <Compile Include="Assets\Scripts\Visual\BetterCardRotation.cs" />
     <Compile Include="Assets\Scripts\Visual\CardSceneManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Message.cs" />
     <Compile Include="Assets\Scripts\battle\Player1Health.cs" />
     <Compile Include="Assets\Scripts\ClientNetwork\ClientNetwork.cs" />
+    <Compile Include="Assets\Scripts\battle\DieButton.cs" />
     <Compile Include="Assets\Scripts\Visual\Draggable.cs" />
     <Compile Include="Assets\Scripts\SO Asset Scripts\CharacterAsset\CharacterAsset.cs" />
     <Compile Include="Assets\Scripts\battle\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\battle\Player2Health.cs" />
+    <Compile Include="Assets\Scripts\battle\LoseButton.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Visual\OneCardManager.cs" />
     <Compile Include="Assets\Scripts\Visual\EarthSpin.cs" />

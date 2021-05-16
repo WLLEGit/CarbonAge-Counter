@@ -6,33 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Choose Crad Sense.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Battle.unity
-    guid: d631e423f01409b4ea79c15d48c1b0ac
-  - enabled: 1
-    path: Assets/Scenes/beta.unity
-    guid: fc8cedb4d32167f45bd64fc8fde373c2
-  - enabled: 1
-    path: Assets/Scenes/ClientNetwork.unity
-    guid: d2de2e7ddfce25c40aab2e0c26f0943f
-  - enabled: 1
-    path: Assets/Scenes/Earth.unity
-    guid: df593a320500c864b944dbe6d9028b42
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 7a07231695c775445b6d8342eda13fac
-  - enabled: 1
-    path: Assets/Scenes/SelectingCardsSection.unity
-    guid: 8857d3bb1409db94495370078daa7210
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 62e5e45b9aabf3140af34a11d9f36ca2
   - enabled: 1
-    path: Assets/Scenes/tmp.unity
-    guid: d76190a7c716188488aa993e43ec4a5f
-  - enabled: 1
     path: Assets/Scenes/VolumeUI.unity
     guid: 26ee197136d0c9e47a2cab3e3d074c4c
+  - enabled: 1
+    path: Assets/Scenes/ClientNetwork.unity
+    guid: d2de2e7ddfce25c40aab2e0c26f0943f
+  - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: d631e423f01409b4ea79c15d48c1b0ac
   m_configObjects: {}

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 706a65d576f9bb542a00b72b67e96f8a
+guid: c7b04067ded62f141aae0f6ed05ac62e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -855298285791758126
-    second: 1_0
-  - first:
-      213: 9180251791023625898
-    second: 1_1
+      213: 5511345435944472443
+    second: PlayerPicMask_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,34 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_0
+      name: PlayerPicMask_0
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 0
-        width: 1301
-        height: 1931
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d8b16a9dbe5124f0800000000000000
-      internalID: -855298285791758126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1_1
-      rect:
-        serializedVersion: 2
-        x: 1478
-        y: 775
-        width: 1024
-        height: 1024
+        x: 570
+        y: 583
+        width: 406
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa65b986d5ec66f70800000000000000
-      internalID: 9180251791023625898
+      spriteID: b7fc0ff397b3c7c40800000000000000
+      internalID: 5511345435944472443
       vertices: []
       indices: 
       edges: []
