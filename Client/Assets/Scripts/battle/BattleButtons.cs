@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BattleButtons : MonoBehaviour
@@ -9,20 +8,24 @@ public class BattleButtons : MonoBehaviour
     public static BattleButtons ButtonButtonsInstance;
     public Button CardsButton;
     public BattleButtons BattleButtonsInstance;
+    public GameObject SettingScene;
+    public GameObject SelectingCardSectionScene;
     private void Start()
     {
        BattleButtonsInstance = this;
     }
     // Start is called before the first frame update
     public void Settings(){
-        SceneManager.LoadScene("Settings");
+        SettingScene = GameObject.Find("SettingScene");
+        SettingScene.SetActive(true);
     }
     public void CanUse(){
             CardsButton.enabled = true;
             CardsButton.interactable = true;
     }
     public void Cards(){
-        SceneManager.LoadScene("SelectingCardsSection");
+        SelectingCardSectionScene = GameObject.Find("SelectingCardsInterface");
+        SelectingCardSectionScene.SetActive(true);
     }
     public void Finish(){
             CardsButton.enabled = false;

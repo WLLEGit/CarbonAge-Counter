@@ -120,22 +120,22 @@ public class ClientNetwork : MonoBehaviour
 
     public void Win(object o)
     {
-        Battle.BattleInstance.Win();
+        battle.BattleInstance.Win();
     }
 
     public void Die(object o)
     {
-        Battle.BattleInstance.Die();
+        battle.BattleInstance.Die();
     }
 
     public void Lose(object o)
     {
-        Battle.BattleInstance.Lose();
+        battle.BattleInstance.Lose();
     }
 
     public void StartThisTurn(object o)
     {
-        Battle.BattleInstance.StartTurn();
+        battle.BattleInstance.StartTurn();
     }
 
     public void RivalSetLeader(object o)
@@ -146,7 +146,7 @@ public class ClientNetwork : MonoBehaviour
 
     public void TransitionTurn(object o)
     {
-        Battle.BattleInstance.StartTransitionGame();
+        battle.BattleInstance.StartTransitionGame();
     }
 }
 

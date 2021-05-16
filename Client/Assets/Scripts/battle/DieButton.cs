@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DieButton : MonoBehaviour
-{
+{    public GameObject MenuScene;
+    public GameObject BattleScene;
+    public GameObject Die;
     public void Return()
     {
-        SceneManager.LoadScene("Menu");
+        MenuScene.SetActive(true);
+        BattleScene.SetActive(false);
+        Die.SetActive(false);
     }
 }

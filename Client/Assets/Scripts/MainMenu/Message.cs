@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Message : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static Message MessageInstance;
+    public GameObject AboutUs;
      public void Click()
     {
-        gameObject.SetActive(true); 
-    }
-    public void Exit(){
-        SceneManager.LoadScene("Menu");
+        AboutUs.SetActive(true); 
     }
 
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEditor;
 
 public class MainMenu : MonoBehaviour
@@ -11,17 +10,10 @@ public class MainMenu : MonoBehaviour
     public Dropdown DropdownSelecter;
     public RectTransform Buttons;
     public RectTransform InputAndSelect;
+    public GameObject SettingScene;
+    public GameObject MenuScene;
+    public GameObject BattleScene;
 
-    public static AsyncOperation asyncBattle;
-    public static AsyncOperation asyncClientNetWork;
-
-    private void Start()
-    {
-        asyncBattle = SceneManager.LoadSceneAsync("Battle");
-        asyncBattle.allowSceneActivation = false;
-        asyncClientNetWork = SceneManager.LoadSceneAsync("ClientNetwork");
-        asyncClientNetWork.allowSceneActivation = false;
-    }
     public void PlayGame(){
         StartCoroutine(TranslateButtonsSmoothly(200));
     }
@@ -29,7 +21,8 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     public void Settings(){
-        SceneManager.LoadScene("Settings");
+        SettingScene = GameObject.Find("SettingScene");
+        SettingScene.SetActive(true);
     }
     public void OnSelectAndInputDone()
     {
@@ -50,6 +43,5 @@ public class MainMenu : MonoBehaviour
     {
         EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
         yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
-        asyncBattle.allowSceneActivation = true;
     }
 }
