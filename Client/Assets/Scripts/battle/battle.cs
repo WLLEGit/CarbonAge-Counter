@@ -12,7 +12,7 @@ public class Battle : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject die;
-    void Start()
+    void Awake()
     {
         BattleInstance = this;
     }

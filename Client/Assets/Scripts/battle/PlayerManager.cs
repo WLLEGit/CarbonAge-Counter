@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager PlayerManagerInstance;
     public static bool isRivalPlayerSet = false;
 
-    private void Start()
+    private void Awake()
     {
         PlayerManagerInstance = this;
     }

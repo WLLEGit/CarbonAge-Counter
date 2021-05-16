@@ -14,17 +14,12 @@ public class ClientNetwork : MonoBehaviour
     public static ClientNetwork ClientNetworkInstance;
     private Socket Socket;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         ClientNetworkInstance = this;
+        Debug.Log("ClientNetwork Loaded");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
     public bool ConnectServer(string ip, int port)
     {
         IPEndPoint point = new IPEndPoint(IPAddress.Parse(ip), port);
