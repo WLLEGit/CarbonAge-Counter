@@ -8,7 +8,6 @@ public class BattleButtons : MonoBehaviour
 {
     public static BattleButtons ButtonButtonsInstance;
     public Button CardsButton;
-    public static bool useable = true;
     public BattleButtons BattleButtonsInstance;
     private void Start()
     {
@@ -19,19 +18,14 @@ public class BattleButtons : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
     public void CanUse(){
-        if(useable == true){
             CardsButton.enabled = true;
             CardsButton.interactable = true;
-        }
-        else{
-            CardsButton.enabled = false;
-            CardsButton.interactable = false;
-        }
     }
     public void Cards(){
         SceneManager.LoadScene("SelectingCardsSection");
     }
     public void Finish(){
-        useable = false;
+            CardsButton.enabled = false;
+            CardsButton.interactable = false;
     }
 }
