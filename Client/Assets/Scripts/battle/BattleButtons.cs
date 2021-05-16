@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class BattleButtons : MonoBehaviour
 {
-    public static BattleButtons ButtonButtonsInstance;
+    public static BattleButtons BattleButtonsInstance;
     public Button CardsButton;
-    public BattleButtons BattleButtonsInstance;
     public GameObject SettingScene;
     public GameObject SelectingCardSectionScene;
     private void Start()
@@ -20,8 +19,8 @@ public class BattleButtons : MonoBehaviour
         SettingScene.SetActive(true);
     }
     public void CanUse(){
-            CardsButton.enabled = true;
-            CardsButton.interactable = true;
+            //CardsButton.enabled = true;
+            //CardsButton.interactable = true;
     }
     public void Cards(){
         SelectingCardSectionScene = GameObject.Find("SelectingCardsInterface");

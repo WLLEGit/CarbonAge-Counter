@@ -13,7 +13,10 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingScene;
     public GameObject MenuScene;
     public GameObject BattleScene;
-
+    private void Awake()
+    {
+        BattleScene.SetActive(true);
+    }
     public void PlayGame(){
         StartCoroutine(TranslateButtonsSmoothly(200));
     }
@@ -32,9 +35,9 @@ public class MainMenu : MonoBehaviour
     }
     private IEnumerator TranslateButtonsSmoothly(int dis)
     {
-        for (int i = 0; i < dis; ++i)
+        for (int i = 0; i < dis / 3; ++i)
         {
-            Buttons.transform.Translate(Vector3.left, Space.World);
+            Buttons.transform.Translate(Vector3.left * 3, Space.World);
             yield return null;
         }
         InputAndSelect.gameObject.SetActive(true);
@@ -43,5 +46,8 @@ public class MainMenu : MonoBehaviour
     {
         EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
         yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
+        Debug.Log("Switch");
+        BattleScene.SetActive(true);
+        MenuScene.SetActive(false);
     }
 }

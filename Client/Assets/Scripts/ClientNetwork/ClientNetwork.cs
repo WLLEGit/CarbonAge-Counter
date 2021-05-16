@@ -140,6 +140,7 @@ public class ClientNetwork : MonoBehaviour
 
     public void RivalSetLeader(object o)
     {
+        Debug.LogError("lalal");
         Enum.TryParse<Leaders>(((string[])o)[1], out Leaders leaderType);
         PlayerManager.PlayerManagerInstance.Player2SetLeader(leaderType);
     }

@@ -215,6 +215,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.24259518
       objectReference: {fileID: 0}
+    - target: {fileID: 4386269061102631251, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
+      propertyPath: MenuScene
+      value: 
+      objectReference: {fileID: 1854962650}
+    - target: {fileID: 4386269061102631251, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
+      propertyPath: BattleScene
+      value: 
+      objectReference: {fileID: 1761143178}
     - target: {fileID: 4386269061409841462, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -229,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142949151872584289, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
@@ -532,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536123477855, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536336361238, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_SizeDelta.x
@@ -649,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920585826370881389, guid: 112edab0f2611cf40bcb6ddd433124bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6920585826370881394, guid: 112edab0f2611cf40bcb6ddd433124bc, type: 3}
       propertyPath: m_RootOrder
