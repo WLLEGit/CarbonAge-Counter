@@ -33,7 +33,7 @@ public class battle : MonoBehaviour
     }
     public void StartTurn()
     {
-        BattleButtons.BattleButtonsInstance.CanUse();
+        BattleButtons.isCardsButtonEnabled = true;
     }
     public void StartTransitionGame()
     {

@@ -9,25 +9,43 @@ public class BattleButtons : MonoBehaviour
     public Button CardsButton;
     public GameObject SettingScene;
     public GameObject SelectingCardSectionScene;
+
+    public static bool isCardsButtonEnabled = false;
     private void Start()
     {
-       BattleButtonsInstance = this;
+        BattleButtonsInstance = this;
+        CanUse();
+    }
+    private void Update()
+    {
+        if (isCardsButtonEnabled)
+        {
+            CanUse();
+            isCardsButtonEnabled = false;
+        }
     }
     // Start is called before the first frame update
-    public void Settings(){
+    public void Settings()
+    {
         SettingScene = GameObject.Find("SettingScene");
         SettingScene.SetActive(true);
     }
-    public void CanUse(){
-            //CardsButton.enabled = true;
-            //CardsButton.interactable = true;
+    public void CanUse()
+    {
+        Debug.Log("CanUse");
+        CardsButton.enabled = true;
+        CardsButton.interactable = true;
     }
-    public void Cards(){
-        SelectingCardSectionScene = GameObject.Find("SelectingCardsInterface");
+    public void Cards()
+    {
+        Debug.LogError("CardsSelecting clicked");
         SelectingCardSectionScene.SetActive(true);
     }
-    public void Finish(){
-            CardsButton.enabled = false;
-            CardsButton.interactable = false;
+    public void Finish()
+    {
+        Debug.Log("Finish");
+        CardsButton.enabled = false;
+        CardsButton.interactable = false;
+        ClientNetwork.ClientNetworkInstance.EndThisTurn();
     }
 }

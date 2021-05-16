@@ -46,7 +46,6 @@ public class MainMenu : MonoBehaviour
     {
         EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
         yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
-        Debug.Log("Switch");
         BattleScene.SetActive(true);
         MenuScene.SetActive(false);
     }
