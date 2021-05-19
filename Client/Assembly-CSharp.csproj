@@ -73,6 +73,8 @@
     <Compile Include="Assets\Scripts\SO Asset Scripts\CharacterAsset\CharacterAsset.cs" />
     <Compile Include="Assets\Scripts\battle\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\battle\Player2Health.cs" />
+    <Compile Include="Assets\Scripts\Visual\ScoreBarManager.cs" />
+    <Compile Include="Assets\Scripts\Visual\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\battle\LoseButton.cs" />
     <Compile Include="Assets\Scripts\battle\battle.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
