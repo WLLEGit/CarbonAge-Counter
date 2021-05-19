@@ -219,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -7783732609952980111, guid: eaa68a199b38f87479a964baeb6c2862, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -534,6 +534,6 @@ MonoBehaviour:
   Score: {fileID: 970819203954426765}
   DeltaScore: {fileID: 7720736102996760502}
   ArrowImage: {fileID: 7788513614039883583}
-  UpArrow: {fileID: 0}
-  DownArrow: {fileID: 0}
+  UpArrow: {fileID: -7783732609952980111, guid: eaa68a199b38f87479a964baeb6c2862, type: 3}
+  DownArrow: {fileID: -7436223618422029686, guid: 11c58182e487099438b7321c7442edf7, type: 3}
   isIncreasing: 0

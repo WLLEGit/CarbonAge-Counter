@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public Sprite UpArrow;
     public Sprite DownArrow;
     [HideInInspector]
-    public bool isIncreasing;
+    public bool isIncreasing = true;
     void Start()
     {
         Score.text = "0";
