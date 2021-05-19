@@ -9,6 +9,7 @@ public class BattleButtons : MonoBehaviour
     public Button CardsButton;
     public GameObject SettingScene;
     public GameObject SelectingCardSectionScene;
+    public GameObject BattleScene;
 
     public static bool isCardsButtonEnabled = false;
     private void Start()
@@ -38,8 +39,8 @@ public class BattleButtons : MonoBehaviour
     }
     public void Cards()
     {
-        Debug.LogError("CardsSelecting clicked");
         SelectingCardSectionScene.SetActive(true);
+        BattleScene.SetActive(false);
     }
     public void Finish()
     {

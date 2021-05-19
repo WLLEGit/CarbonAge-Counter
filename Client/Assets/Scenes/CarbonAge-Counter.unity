@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142949151872584289, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
@@ -293,7 +293,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616128374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -941.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -398,10 +398,84 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4875838536608951231, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
   m_PrefabInstance: {fileID: 1690791020}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1324880626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -80.400314
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270394779935829581, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330277022367136047, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: BattleScene
+      value: 
+      objectReference: {fileID: 1761143178}
+    - target: {fileID: 330277022367136047, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: SelectingCardSectionScene
+      value: 
+      objectReference: {fileID: 1463128578}
+    - target: {fileID: 3874222228444753847, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_Name
+      value: SelectingCardsInterface
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874222228444753847, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
 --- !u!1 &1439768154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4875838537184593223, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
   m_PrefabInstance: {fileID: 1690791020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463128578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3874222228444753847, guid: b9eab1a31f037414abded1b84d0a6e19, type: 3}
+  m_PrefabInstance: {fileID: 1324880626}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1690791020
 PrefabInstance:
@@ -544,8 +618,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536123477855, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4875838536336361234, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
+      propertyPath: BattleScene
+      value: 
+      objectReference: {fileID: 1761143178}
+    - target: {fileID: 4875838536336361234, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
+      propertyPath: SelectingCardSectionScene
+      value: 
+      objectReference: {fileID: 1463128578}
     - target: {fileID: 4875838536336361238, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_SizeDelta.x
       value: 17.5
@@ -616,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5261886668791452414, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533887845164976669, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_IsActive

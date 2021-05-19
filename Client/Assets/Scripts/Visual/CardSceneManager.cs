@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CardSceneManager : MonoBehaviour
 {
-
+    public GameObject SelectingCardSectionScene;
+    public GameObject BattleScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class CardSceneManager : MonoBehaviour
             foreach (var card in SlotsManager.SelectedCards)
                 cardNames.Add(card.ToString());
             ClientNetwork.ClientNetworkInstance.ChangeCardBoard(cardNames);
+            SelectingCardSectionScene.SetActive(false);
+            BattleScene.SetActive(true);
         }
         else
         {
