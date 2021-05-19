@@ -111,14 +111,24 @@ public class ClientNetwork : MonoBehaviour
     public void ChangePoints(object o)
     {
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player1SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
+        PlayerManager.PlayerManagerInstance.Player1SetPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
     }
     public void RivalChangePoints(object o)
     {
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player2SetPoints(int.Parse(strs[2]), int.Parse(strs[1]), int.Parse(strs[0]));
+        PlayerManager.PlayerManagerInstance.Player2SetPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
     }
 
+    public void ChangeDeltaPoints(object o)
+    {
+        string[] strs = (string[])o;
+        PlayerManager.PlayerManagerInstance.Player1SetDeltaPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+    }
+    public void RivalChangeDeltaPoints(object o)
+    {
+        string[] strs = (string[])o;
+        PlayerManager.PlayerManagerInstance.Player2SetDeltaPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+    }
     public void Win(object o)
     {
         battle.BattleInstance.Win();

@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         BattleScene.SetActive(true);
+        BattleScene.SetActive(false);
     }
     public void PlayGame(){
         StartCoroutine(TranslateButtonsSmoothly(200));

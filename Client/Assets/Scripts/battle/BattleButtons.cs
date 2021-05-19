@@ -7,6 +7,7 @@ public class BattleButtons : MonoBehaviour
 {
     public static BattleButtons BattleButtonsInstance;
     public Button CardsButton;
+    public Button AttackButton;
     public GameObject SettingScene;
     public GameObject SelectingCardSectionScene;
     public GameObject BattleScene;

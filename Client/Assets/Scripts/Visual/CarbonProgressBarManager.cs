@@ -18,7 +18,7 @@ public class CarbonProgressBarManager : MonoBehaviour
     {
         
     }
-    void SetCarbonPercent(double amount)
+    public void SetCarbonPercent(double amount)
     {
         ProgressBar.fillAmount = (float)amount;
     }
