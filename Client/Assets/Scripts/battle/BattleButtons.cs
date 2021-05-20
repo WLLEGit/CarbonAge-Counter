@@ -29,7 +29,6 @@ public class BattleButtons : MonoBehaviour
     // Start is called before the first frame update
     public void Settings()
     {
-        SettingScene = GameObject.Find("SettingScene");
         SettingScene.SetActive(true);
     }
     public void CanUse()
@@ -37,6 +36,8 @@ public class BattleButtons : MonoBehaviour
         Debug.Log("CanUse");
         CardsButton.enabled = true;
         CardsButton.interactable = true;
+        AttackButton.enabled = true;
+        AttackButton.interactable = true;
     }
     public void Cards()
     {
@@ -48,6 +49,8 @@ public class BattleButtons : MonoBehaviour
         Debug.Log("Finish");
         CardsButton.enabled = false;
         CardsButton.interactable = false;
+        AttackButton.enabled = false;
+        AttackButton.interactable = false;
         ClientNetwork.ClientNetworkInstance.EndThisTurn();
     }
 }
