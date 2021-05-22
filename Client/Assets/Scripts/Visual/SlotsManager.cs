@@ -12,6 +12,7 @@ public class SlotsManager : MonoBehaviour
     public Transform[] Slots;
     public static Cards[] SelectedCards;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,8 +69,19 @@ public class SlotsManager : MonoBehaviour
         }
 
         IsFull = true;
+        if(ClientNetwork.ClientNetworkInstance.CurrentTime==TimeClasses.Time1)
+        {
+            if(SelectedCards[0]==Cards.DefaultCard||SelectedCards[1]==Cards.DefaultCard)
+            {
+                IsFull=false;
+            }
+        }
+        else
+        { 
         foreach (var card in SelectedCards)
             if (card == Cards.DefaultCard)
                 IsFull = false;
+        }
     }
+
 }

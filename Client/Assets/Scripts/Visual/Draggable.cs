@@ -59,6 +59,7 @@ public class Draggable : MonoBehaviour
     
     private void OnMouseDown()
     {
+        Debug.Log("MouseDown Detected");
         if(!FitTime)
         return;
         DraggableInstanse = this;
