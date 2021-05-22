@@ -20,7 +20,7 @@ public class CardSceneManager : MonoBehaviour
 
     public void OnExitButtonClicked()
     {
-        if(!SlotsManager.IsFull)
+        if(SlotsManager.IsFull)
         {
             List<string> cardNames = new List<string>();
             foreach (var card in SlotsManager.SelectedCards)
@@ -31,7 +31,7 @@ public class CardSceneManager : MonoBehaviour
         }
         else
         {
-            ;
+            Debug.Log("Cardboard Not Full");
         }
     }
 }

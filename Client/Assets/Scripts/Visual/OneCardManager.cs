@@ -7,6 +7,8 @@ using System;
 public class OneCardManager : MonoBehaviour
 {
     public CardAsset CardAsset;
+    public bool FitTime;
+    public TimeClasses c_time;
     [Header("Text Component References")]
     public Text Title_Text;
     public Text Mil_Text;
@@ -18,24 +20,57 @@ public class OneCardManager : MonoBehaviour
 
     public Cards CardType;
 
+    void JudgeTime()
+    {
+        c_time=ClientNetwork.ClientNetworkInstance.CurrentTime;
+        if(c_time==TimeClasses.Time1)
+        {
+            if(Time==TimeClasses.Time1)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+        else if (c_time==TimeClasses.Time2)
+        {
+            if(Time==TimeClasses.Time1||Time==TimeClasses.Time2)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+        else if(c_time==TimeClasses.Time3)
+        {
+            if(Time==TimeClasses.Time1||Time==TimeClasses.Time2||Time==TimeClasses.Time3)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+    }
     void Awake()
     {
         if (CardAsset != null)
-            ReadCardFromAsset();
+            {
+                ReadCardFromAsset();
+                JudgeTime();
+            }
         CardType = (Cards)Enum.Parse(typeof(Cards), CardAsset.Name);
     }
-
-    private bool canBePlayedNow = false;
-    public bool CanBePlayedNow
+    void Rotation()
     {
-        get
+        if(!FitTime)
         {
-            return canBePlayedNow;
-        }
-
-        set
-        {
-            canBePlayedNow = value;
+            transform.rotation=Quaternion.Euler(new Vector3(0,180,0));
         }
     }
 
@@ -52,6 +87,7 @@ public class OneCardManager : MonoBehaviour
 
     private void Update()
     {
-
+        JudgeTime();
+        Rotation();    
     }
 }

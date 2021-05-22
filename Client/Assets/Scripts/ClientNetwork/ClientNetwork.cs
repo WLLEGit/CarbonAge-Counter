@@ -13,6 +13,9 @@ public class ClientNetwork : MonoBehaviour
 {
     public static ClientNetwork ClientNetworkInstance;
     private Socket Socket;
+    [HideInInspector]
+
+    public TimeClasses CurrentTime;
 
     private void Awake()
     {
@@ -57,8 +60,10 @@ public class ClientNetwork : MonoBehaviour
     {
         string[] lines = msg.Split('\n');
         lines = lines.Where(s => !string.IsNullOrEmpty(s)).ToArray();       //Remove Empty Line
+        Debug.Log(lines.Length);
         foreach (var line in lines)
         {
+            Debug.Log("Start Process:" + line);
             string[] tokens = line.Split(' ');
             Type t = typeof(ClientNetwork);
             var method = t.GetMethod(tokens[0]);
@@ -110,24 +115,56 @@ public class ClientNetwork : MonoBehaviour
 
     public void ChangePoints(object o)
     {
+        Debug.Log("ChangePoints Called");
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player1SetPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+        PlayerManager.PlayerManagerInstance.Actions.Add(PlayerManager.PlayerManagerInstance.Player1SetPoints);
+        PlayerManager.PlayerManagerInstance.arg1.Add(double.Parse(strs[2]));
+        PlayerManager.PlayerManagerInstance.arg2.Add(double.Parse(strs[1]));
+        PlayerManager.PlayerManagerInstance.arg3.Add(double.Parse(strs[3]));
     }
     public void RivalChangePoints(object o)
     {
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player2SetPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+        PlayerManager.PlayerManagerInstance.Actions.Add(PlayerManager.PlayerManagerInstance.Player2SetPoints);
+        PlayerManager.PlayerManagerInstance.arg1.Add(double.Parse(strs[2]));
+        PlayerManager.PlayerManagerInstance.arg2.Add(double.Parse(strs[1]));
+        PlayerManager.PlayerManagerInstance.arg3.Add(double.Parse(strs[3]));
     }
 
     public void ChangeDeltaPoints(object o)
     {
+        Debug.Log("ChangeDeltaPoints Called");
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player1SetDeltaPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+        PlayerManager.PlayerManagerInstance.Actions.Add(PlayerManager.PlayerManagerInstance.Player1SetDeltaPoints);
+        PlayerManager.PlayerManagerInstance.arg1.Add(double.Parse(strs[2]));
+        PlayerManager.PlayerManagerInstance.arg2.Add(double.Parse(strs[1]));
+        PlayerManager.PlayerManagerInstance.arg3.Add(double.Parse(strs[3]));
     }
     public void RivalChangeDeltaPoints(object o)
     {
         string[] strs = (string[])o;
-        PlayerManager.PlayerManagerInstance.Player2SetDeltaPoints(double.Parse(strs[2]), double.Parse(strs[1]), double.Parse(strs[3]));
+        foreach (var str in strs)
+            Debug.Log(str);
+        PlayerManager.PlayerManagerInstance.Actions.Add(PlayerManager.PlayerManagerInstance.Player2SetDeltaPoints);
+        PlayerManager.PlayerManagerInstance.arg1.Add(double.Parse(strs[2]));
+        PlayerManager.PlayerManagerInstance.arg2.Add(double.Parse(strs[1]));
+        PlayerManager.PlayerManagerInstance.arg3.Add(double.Parse(strs[3]));
+    }
+    public void SetEra(object o)
+    {
+        string[] strs=(string[])o;
+        if(strs[1]=="Time1")
+        {
+            CurrentTime=TimeClasses.Time1;
+        }
+        else if(strs[1]=="Time2")
+        {
+            CurrentTime=TimeClasses.Time2;
+        }
+        else if(strs[1]=="Time3")
+        {
+            CurrentTime=TimeClasses.Time3;
+        }
     }
     public void Win(object o)
     {

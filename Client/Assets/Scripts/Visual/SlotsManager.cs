@@ -24,6 +24,10 @@ public class SlotsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsFull)
+            CloseButton.gameObject.SetActive(true);
+        else
+            CloseButton.gameObject.SetActive(false);
     }
 
     public Vector3 TheNearestSlotVector()

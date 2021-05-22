@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +15,24 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager PlayerManagerInstance;
     public static bool isRivalPlayerSet = false;
 
-    const int MAXCARBON = 1000;
+    [HideInInspector]
+    public List<double> arg1, arg2, arg3;
+    public List<Action<double, double, double>> Actions = new List<Action<double, double, double>>();
+    const int MAXCARBON = 10;
     private void Awake()
     {
         PlayerManagerInstance = this;
+    }
+    private void Update()
+    {
+        while(Actions.Count != 0)
+        {
+            Actions[0](arg1[0], arg2[0], arg3[0]);
+            Actions.RemoveAt(0);
+            arg1.RemoveAt(0);
+            arg2.RemoveAt(0);
+            arg3.RemoveAt(0);
+        }
     }
     // Start is called before the first frame update
     public void Player1SetPoints(double era, double mili, double carbon)
@@ -37,6 +53,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void Player2SetDeltaPoints(double deltaEra, double deltaMili, double deltaCarbon)
     {
+        Debug.Log(string.Format("Player2SetDeltaPoints, ARGS: {0} {1} {2}",deltaEra, deltaMili, deltaCarbon));
         Player2ScoreBar.GetComponent<ScoreBarManager>().SetDeltaPoints(deltaMili + 2 * deltaEra - 3 * deltaCarbon, deltaEra, deltaMili);
     }
 

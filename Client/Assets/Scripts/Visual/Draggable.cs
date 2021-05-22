@@ -5,13 +5,62 @@ using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour
 {
+    public CardAsset CardAsset;
+    public TimeClasses Time;
+    public bool FitTime;
+    public TimeClasses c_time;
     private bool isMoving = false;
     private float zDisplacement;
     private Vector3 pointerDisplacement;
 
     public static Draggable DraggableInstanse;
+    void ReadTimeFromAssert()
+    {
+        Time=CardAsset.Time;
+    }
+    void JudgeTime()
+    {
+        ReadTimeFromAssert();
+        c_time=ClientNetwork.ClientNetworkInstance.CurrentTime;
+        if(c_time==TimeClasses.Time1)
+        {
+            if(Time==TimeClasses.Time1)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+        else if (c_time==TimeClasses.Time2)
+        {
+            if(Time==TimeClasses.Time1||Time==TimeClasses.Time2)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+        else if(c_time==TimeClasses.Time3)
+        {
+            if(Time==TimeClasses.Time1||Time==TimeClasses.Time2||Time==TimeClasses.Time3)
+            {
+                FitTime=true;
+            }
+            else
+            {
+                FitTime=false;
+            }
+        }
+    }
+    
     private void OnMouseDown()
     {
+        if(!FitTime)
+        return;
         DraggableInstanse = this;
         isMoving = true;
         zDisplacement = -Camera.main.transform.position.z + transform.position.z;
@@ -36,6 +85,7 @@ public class Draggable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        JudgeTime();
         if (isMoving)
         {
             Vector3 mousePos = MouseInWorldCoords();

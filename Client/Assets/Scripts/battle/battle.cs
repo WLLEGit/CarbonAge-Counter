@@ -8,28 +8,36 @@ using UnityEngine.UI;
 public class battle : MonoBehaviour
 {
     public static battle BattleInstance;
-    public static string outputpath = "./CarbonAge-Counter/Game/app.exe";
-    public GameObject win;
-    public GameObject lose;
-    public GameObject die;
+    public static string InnerGamePath = "./CarbonAge-Counter/Game/app.exe";
+    public GameObject WinLabel;
+    public GameObject LoseLabel;
+    public GameObject DieLabel;
+
+    private List<GameObject> toSetActive = new List<GameObject>();
     void Awake()
     {
         BattleInstance = this;
     }
+    private void Update()
+    {
+        if(toSetActive.Count != 0)
+        {
+            foreach(var obj in toSetActive)
+                obj.gameObject.SetActive(true);
+        }
+        toSetActive = new List<GameObject>();
+    }
     public void Win()
     {
-        win = GameObject.Find("Win");
-        win.SetActive(true);
+        toSetActive.Add(WinLabel);
     }
     public void Die()
     {
-        die = GameObject.Find("Die");
-        die.SetActive(true);
+        toSetActive.Add(DieLabel);
     }
     public void Lose()
     {
-        lose = GameObject.Find("Lose");
-        lose.SetActive(true);
+        toSetActive.Add(LoseLabel);
     }
     public void StartTurn()
     {
@@ -37,6 +45,6 @@ public class battle : MonoBehaviour
     }
     public void StartTransitionGame()
     {
-        Process.Start(outputpath);
+        //Process.Start(InnerGamePath);
     }
 }

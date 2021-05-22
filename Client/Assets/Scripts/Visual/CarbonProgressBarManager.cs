@@ -20,6 +20,7 @@ public class CarbonProgressBarManager : MonoBehaviour
     }
     public void SetCarbonPercent(double amount)
     {
+        Debug.Log("SetPercent Called, " + amount.ToString());
         ProgressBar.fillAmount = (float)amount;
     }
 }
