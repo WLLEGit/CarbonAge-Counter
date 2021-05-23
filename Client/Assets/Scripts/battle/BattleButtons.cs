@@ -16,7 +16,10 @@ public class BattleButtons : MonoBehaviour
     private void Start()
     {
         BattleButtonsInstance = this;
-        CanUse();
+        CardsButton.enabled = false;
+        CardsButton.interactable = false;
+        AttackButton.enabled = false;
+        AttackButton.interactable = false;
     }
     private void Update()
     {
@@ -52,5 +55,9 @@ public class BattleButtons : MonoBehaviour
         AttackButton.enabled = false;
         AttackButton.interactable = false;
         ClientNetwork.ClientNetworkInstance.EndThisTurn();
+    }
+    public void Attack()
+    {
+        ClientNetwork.ClientNetworkInstance.DealDamage();
     }
 }

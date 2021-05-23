@@ -27,7 +27,7 @@ namespace GameServer
     public enum Era { Time1, Time2, Time3 };
     public class TurnManager
     {
-        const int TURNSEACHERA = 5;
+        const int TURNSEACHERA = 2;
         public Player CurPlayer;
         public Era CurEra = Era.Time1;
         public int TurnCount = 0;

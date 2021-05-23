@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\battle\Player1Health.cs" />
     <Compile Include="Assets\Scripts\ClientNetwork\ClientNetwork.cs" />
     <Compile Include="Assets\Scripts\battle\DieButton.cs" />
+    <Compile Include="Assets\Scripts\Visual\SPManager.cs" />
     <Compile Include="Assets\Scripts\Visual\Draggable.cs" />
+    <Compile Include="Assets\Scripts\Visual\SettingManager.cs" />
     <Compile Include="Assets\Scripts\SO Asset Scripts\CharacterAsset\CharacterAsset.cs" />
     <Compile Include="Assets\Scripts\battle\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\battle\Player2Health.cs" />
@@ -83,7 +85,6 @@
     <Compile Include="Assets\Scripts\Visual\EarthSpin.cs" />
     <Compile Include="Assets\Scripts\Visual\SlotsManager.cs" />
     <Compile Include="Assets\Scripts\battle\BattleButtons.cs" />
-    <Compile Include="Assets\Scripts\Visual\SPManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

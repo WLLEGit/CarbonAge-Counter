@@ -108,6 +108,7 @@ namespace GameServer
             string toPlayer2 = new string("");
             foreach (var command in commands)
             {
+                Console.WriteLine("SendMsgTo: {0}\n{1}\n" ,command.Target.Socket.RemoteEndPoint.ToString(), command.CommandMsg);
                 if (command.Target == Players[0])
                     toPlayer1 += command.CommandMsg + '\n';
                 else if (command.Target == Players[1])

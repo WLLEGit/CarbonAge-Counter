@@ -72,6 +72,9 @@ public class OneCardManager : MonoBehaviour
         {
             transform.rotation=Quaternion.Euler(new Vector3(0,180,0));
         }
+        else
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
     }
 
     public void ReadCardFromAsset()

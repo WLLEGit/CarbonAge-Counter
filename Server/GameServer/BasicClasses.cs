@@ -158,6 +158,7 @@ namespace GameServer
             CarbonPoints += DeltaCarbonPoints * Leader.CarbonBonusRate * CardCarbonRate;
             EraPoints += DeltaEraPoints * Leader.EraBonusRate;
             score = MilitaryPoints + EraPoints * 2 + CarbonPoints * 3;
+            Attack = Math.Sqrt(MilitaryPoints);
             commands.Add(new Command(this, String.Format("ChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
             commands.Add(new Command(Room.AnotherPlayer(this), String.Format("RivalChangePoints {0} {1} {2}", MilitaryPoints, EraPoints, CarbonPoints)));
             return commands;
@@ -240,6 +241,7 @@ namespace GameServer
                 new Command() { Target = Room.AnotherPlayer(this), CommandMsg = "RivalDealDamage " + Attack }
             };
             Room.AnotherPlayer(this).Health -= Attack;
+            Health -= Room.AnotherPlayer(this).Attack;
             if (Room.AnotherPlayer(this).Health <= 0)
                 commands.Add(new Command(Room.AnotherPlayer(this), "Die"));
             return commands;
