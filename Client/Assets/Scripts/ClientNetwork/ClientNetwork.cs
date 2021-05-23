@@ -196,6 +196,12 @@ public class ClientNetwork : MonoBehaviour
     {
         battle.BattleInstance.StartTransitionGame();
     }
+
+    public void StartSpecialEvent(object o)
+    {
+        Enum.TryParse<SpecialEvents>(((string[])o)[1], out SpecialEvents specialEvents);
+        SpeicalEventManager.SpeicalEventManagerInstance.ActivateSpecialEvent(specialEvents);
+    }
 }
 
 public enum Leaders     //Leaders For Players to Choose
@@ -204,7 +210,15 @@ public enum Leaders     //Leaders For Players to Choose
     Bear,       
     Hawk        
 }
-
+public enum SpecialEvents
+{
+    DefaultSpecialEvent = -1,
+    BingDong = 100,
+    DaHaiXiao = 400,
+    DaMianJiTingDian = 600,
+    FengBaoChao = 800,
+    YuanGuBingDu = 900
+}
 public enum Cards       //All Cards in Game
 {
     DefaultCard,

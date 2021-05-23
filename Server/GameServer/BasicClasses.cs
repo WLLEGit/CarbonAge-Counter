@@ -13,6 +13,11 @@ namespace GameServer
     public enum SpecialEvents
     {
         DefaultSpecialEvent = -1,
+        BingDong = 100,
+        DaHaiXiao = 400,
+        DaMianJiTingDian = 600,
+        FengBaoChao = 800,
+        YuanGuBingDu = 900
     }
 
     public enum Leaders     //领袖枚举类型
@@ -159,6 +164,8 @@ namespace GameServer
         }
         public SpecialEvents GenerateSpecialEvent()
         {
+            if (DeltaCarbonPoints <= 0)
+                return SpecialEvents.DefaultSpecialEvent;
             foreach(SpecialEvents specialEvents in Enum.GetValues(typeof(SpecialEvents)))
             {
                 if(specialEvents > preEvent && (int)specialEvents < CarbonPoints)

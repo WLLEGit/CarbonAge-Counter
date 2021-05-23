@@ -24,16 +24,16 @@ namespace GameServer
         }
     }
 
-    public enum Era { Ancient, Modern, Contemporary };
+    public enum Era { Time1, Time2, Time3 };
     public class TurnManager
     {
         const int TURNSEACHERA = 5;
         public Player CurPlayer;
-        public Era CurEra = Era.Ancient;
+        public Era CurEra = Era.Time1;
         public int TurnCount = 0;
         public Room Room;
 
-        private readonly int criticalCarbonPoints = 100;
+        private readonly int criticalCarbonPoints = 1000;
 
         public void StartGame(Room room)
         {
@@ -42,8 +42,9 @@ namespace GameServer
             while (Room.Players[0].Msg.Length == 0 || Room.Players[1].Msg.Length == 0) ;  //等待两个玩家初始化信息
             Room.Players[0].ProcessMessage(Room.Players[0].Msg);
             Room.Players[1].ProcessMessage(Room.Players[1].Msg);
-            for(CurEra = Era.Ancient; CurEra <= Era.Contemporary; ++CurEra)
+            for(CurEra = Era.Time1; CurEra <= Era.Time3; ++CurEra)
             {
+                SetEra();
                 for (TurnCount = 0; TurnCount < TURNSEACHERA; ++TurnCount)
                 {
                     CurPlayer.StartTurn();
@@ -51,10 +52,15 @@ namespace GameServer
                     CurPlayer.StartTurn();
                     EndTurn();
                 }
-                if(CurEra != Era.Contemporary)
+                if(CurEra != Era.Time3)
                     TransitionTurn();
             }
             EndGame();
+        }
+        private void SetEra()
+        {
+            List<Command> commands = new List<Command> { new Command(Room.Players[0], "SetEra " + CurEra.ToString()), new Command(Room.Players[1], "SetEra " + CurEra.ToString()) };
+            Room.SendCommands(commands);
         }
         private void EndTurn()  //结算本回合的点数，启用卡牌，判断特殊事件
         {
@@ -107,6 +113,7 @@ namespace GameServer
         }
         private void EndGame()
         {
+            Console.WriteLine("Game End");
             List<Command> commands = new List<Command>();
             if (Room.Players[0].score > Room.Players[1].score)
             {
