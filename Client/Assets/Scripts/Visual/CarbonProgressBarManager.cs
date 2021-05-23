@@ -12,7 +12,7 @@ public class CarbonProgressBarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ProgressBar.fillAmount = (float)0.5;
+        ProgressBar.fillAmount = (float)0;
         //StartCoroutine(ChangeCarbonBarSprite());
     }
 
