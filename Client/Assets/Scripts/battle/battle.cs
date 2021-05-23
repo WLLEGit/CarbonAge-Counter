@@ -13,6 +13,8 @@ public class battle : MonoBehaviour
     public GameObject LoseLabel;
     public GameObject DieLabel;
 
+    public Sprite[] Backgrounds;
+    public Image Background;
     private List<GameObject> toSetActive = new List<GameObject>();
     void Awake()
     {
@@ -26,6 +28,12 @@ public class battle : MonoBehaviour
                 obj.gameObject.SetActive(true);
         }
         toSetActive = new List<GameObject>();
+        if (ClientNetwork.ClientNetworkInstance.CurrentTime == TimeClasses.Time1)
+            Background.sprite = Backgrounds[0];
+        else if (ClientNetwork.ClientNetworkInstance.CurrentTime == TimeClasses.Time2)
+            Background.sprite = Backgrounds[1];
+        else if (ClientNetwork.ClientNetworkInstance.CurrentTime == TimeClasses.Time3)
+            Background.sprite = Backgrounds[2];
     }
     public void Win()
     {

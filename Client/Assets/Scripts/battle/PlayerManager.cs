@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector]
     public List<double> arg1, arg2, arg3;
     public List<Action<double, double, double>> Actions = new List<Action<double, double, double>>();
-    const int MAXCARBON = 250;
+    const int MAXCARBON = 850;
     private void Awake()
     {
         PlayerManagerInstance = this;
