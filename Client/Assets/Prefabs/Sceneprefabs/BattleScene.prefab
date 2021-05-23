@@ -779,7 +779,7 @@ RectTransform:
   m_Children:
   - {fileID: 8284396841417744232}
   m_Father: {fileID: 4875838536336361238}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.85125, y: 0}
   m_AnchorMax: {x: 1, y: 0.28}
@@ -993,9 +993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738f58ae57ee8d64db9d6e6ce08196bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  win: {fileID: 4875838535971482469}
-  lose: {fileID: 4875838537184593223}
-  die: {fileID: 4875838536608951231}
+  WinLabel: {fileID: 4875838535971482469}
+  LoseLabel: {fileID: 4875838536608951231}
+  DieLabel: {fileID: 0}
 --- !u!1 &4875838536232722200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,9 +1239,9 @@ RectTransform:
   - {fileID: 94556257964838402}
   - {fileID: 4875838536608951230}
   - {fileID: 4875838535971482468}
-  - {fileID: 4875838537184593222}
   - {fileID: 4875838536474431238}
   - {fileID: 4875838536063010419}
+  - {fileID: 4875838537184593222}
   m_Father: {fileID: 6532335315691973353}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.007}
@@ -1321,6 +1321,9 @@ MonoBehaviour:
   Player2ScoreBar: {fileID: 5555385823463237870}
   Player1CarbonBar: {fileID: 204817427869045860}
   Player2CarbonBar: {fileID: 470442348557845567}
+  arg1: []
+  arg2: []
+  arg3: []
 --- !u!1 &4875838536424064840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1434,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4875838536336361238}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.645}
   m_AnchorMin: {x: 0, y: 0.8516667}
   m_AnchorMax: {x: 0.075, y: 1}
@@ -1966,7 +1969,7 @@ RectTransform:
   - {fileID: 4875838536597408049}
   - {fileID: 4875838535505346773}
   m_Father: {fileID: 4875838536336361238}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2449,6 +2452,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6532335315691973353}
     m_Modifications:
+    - target: {fileID: 264876623456371848, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 264876623456371848, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 264876623456371848, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 264876623456371848, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723398114410837410, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4035049005146294578, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -2507,6 +2530,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4153893781527638019, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819629055486010021, guid: 0514240bb02837e4fb333fac445ab8fe, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
