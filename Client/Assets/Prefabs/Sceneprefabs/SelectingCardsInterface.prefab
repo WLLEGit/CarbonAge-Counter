@@ -4302,6 +4302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardAsset: {fileID: 11400000, guid: 8f52b6c2ccc45a441b339b6c0efef614, type: 2}
+  FitTime: 0
+  c_time: 0
   Title_Text: {fileID: 3524447244682430953}
   Mil_Text: {fileID: 3372904895362418355}
   Description_Text: {fileID: 357465096390548102}
@@ -4322,6 +4324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30f6cc8f18d899468f3a34a7352bb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardAsset: {fileID: 0}
+  Time: 0
+  FitTime: 0
+  c_time: 0
 --- !u!1 &8433168144885120811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,6 +4624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectingCardSectionScene: {fileID: 0}
   BattleScene: {fileID: 0}
+  ExitButton: {fileID: 2948496876303328176}
 --- !u!1 &9012049278553306681
 GameObject:
   m_ObjectHideFlags: 0

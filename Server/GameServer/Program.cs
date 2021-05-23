@@ -33,7 +33,7 @@ namespace GameServer
         public int TurnCount = 0;
         public Room Room;
 
-        private readonly int criticalCarbonPoints = 1000;
+        private readonly int criticalCarbonPoints = 250;
 
         public void StartGame(Room room)
         {
