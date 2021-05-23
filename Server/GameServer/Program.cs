@@ -130,6 +130,7 @@ namespace GameServer
                 commands.Add(new Command(Room.Players[0], "Lose"));
                 commands.Add(new Command(Room.Players[1], "Win"));
             }
+            Room.SendCommands(commands);
         }
     }
 }
