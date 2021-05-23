@@ -11,9 +11,12 @@ public class SpeicalEventManager : MonoBehaviour
     public Transform FengBaoChao;
     public Transform YuanGuBingDu;
 
+    public Transform BattleScene;
+
     public static SpeicalEventManager SpeicalEventManagerInstance;
 
     private Transform ToBeActivated = null;
+    private Transform ToBeDeactivated = null;
     void Start()
     {
         SpeicalEventManagerInstance = this;
@@ -27,10 +30,16 @@ public class SpeicalEventManager : MonoBehaviour
             ToBeActivated.gameObject.SetActive(true);
             ToBeActivated = null;
         }
+        if(ToBeDeactivated != null)
+        {
+            ToBeDeactivated.gameObject.SetActive(false);
+            ToBeDeactivated = null;
+        }
     }
 
     public void ActivateSpecialEvent(SpecialEvents specialEvents)
     {
+        ToBeDeactivated = BattleScene;
         switch (specialEvents)
         {
             case SpecialEvents.DefaultSpecialEvent:
@@ -51,5 +60,9 @@ public class SpeicalEventManager : MonoBehaviour
                 ToBeActivated = YuanGuBingDu;
                 break;
         }
+    }
+    public void ReturnToBattleScene()
+    {
+        ToBeActivated = BattleScene;
     }
 }

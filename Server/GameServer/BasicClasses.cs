@@ -118,7 +118,7 @@ namespace GameServer
         public Room Room;
 
         public Leader Leader;
-        public List<Card> Cards;
+        public List<Card> Cards = new List<Card>();
 
         public double score=0;
         public double MilitaryPoints;
@@ -176,8 +176,9 @@ namespace GameServer
             }
             return SpecialEvents.DefaultSpecialEvent;
         }
-        private void EvaluateCardsProperty()
+        private List<Command> EvaluateCardsProperty()
         {
+            List<Command> commands = new List<Command>();
             DeltaCarbonPoints = DeltaEraPoints = DeltaMilitaryPoints = 0;
             CardCarbonRate = 1;
             foreach(var card in Cards)
@@ -187,6 +188,9 @@ namespace GameServer
                 DeltaMilitaryPoints += card.MilitaryDelta;
                 CardCarbonRate *= card.CarbonRate;
             }
+            commands.Add(new Command(this, String.Format("ChangeDeltaPoints {0} {1} {2}", DeltaMilitaryPoints, DeltaEraPoints, DeltaCarbonPoints)));
+            commands.Add(new Command(Room.AnotherPlayer(this), String.Format("RivalChangeDeltaPoints {0} {1} {2}", DeltaMilitaryPoints, DeltaEraPoints, DeltaCarbonPoints)));
+            return commands;
         }
 
         public void ProcessMessage(string msg)
@@ -197,6 +201,7 @@ namespace GameServer
             foreach (var line in lines)
             {
                 string[] tokens = line.Split(" ");
+                tokens = tokens.Where(s => !string.IsNullOrEmpty(s)).ToArray();
                 Type t = typeof(Player);
                 var method = t.GetMethod(tokens[0]);        //根据tokens的第一个词查找需要调用的函数
 
@@ -223,7 +228,9 @@ namespace GameServer
                     continue;
                 Cards.Add(Card.GetCard((Cards)System.Enum.Parse(typeof(Cards), cardName)));
             }
-            EvaluateCardsProperty();
+            var returnedCommands = EvaluateCardsProperty();
+            foreach (var cmd in returnedCommands)
+                commands.Add(cmd);
             return commands;
         }
         public List<Command> DealDamage(object o)
