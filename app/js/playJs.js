@@ -2,7 +2,7 @@
 var cte; //画布
 var cteWidth; //画布宽度
 var cteHeight; //画布高度
-var erval; //循环函数名
+var erval; //循环函数 名
 var speed = 1; //不变速度名
 var bgW; //背景宽度
 var bgH; //背景高度
