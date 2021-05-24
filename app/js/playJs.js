@@ -93,10 +93,7 @@ function HzSg(){
 				sgg.image =sg3;
 				sgg.fs =10;
 			}
-			else{
-				sgg.image = sg5;
-				sgg.fs =10;
-			}
+			
 		}
 		
 		sgArr[sgj] = sgg;
