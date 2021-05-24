@@ -1,0 +1,24 @@
+/* HUIL jieshuiguo game 版本:1.0*/
+*{
+	margin:0;
+	padding:0;}
+#content{
+	width:320px;
+	height:370px;
+	margin:0 auto;}
+.play{
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:hidden;}
+.ps, .fs{
+	display:block;
+	position:absolute;
+	left:30px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:24px;
+	font-style:normal;}	
+.ps{
+	top:30px;}	
+.fs{
+	top:100px;}	

@@ -1,0 +1,22 @@
+{
+    "main": "play.html", 
+    "name": "game",
+    "description": "小游戏",
+    "version": "0.0.1", 
+    "window": {
+      "title": "Game",
+      "toolbar": true,
+      "frame": true,
+      "width": 1008,
+      "height": 750,
+      "position": "center",
+      "min_width": 400,
+      "min_height": 200
+    },
+    "webkit": {
+      "plugin": true,
+      "java": false,
+      "page-cache": false    
+    },
+    "chromium-args" :"-allow-file-access-from-files"
+  }
