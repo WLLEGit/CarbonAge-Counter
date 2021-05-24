@@ -21,7 +21,6 @@ var bg = new Image();
 var sg1 = new Image();
 var sg2 = new Image();
 var sg3 = new Image();
-var sg4 = new Image();
 var sg5 = new Image();
 var pan = new Image();
 var fsb = new Image();
@@ -78,23 +77,24 @@ function HzSg(){
 		sgg.y = -20;
 		sgg.redC = -(Math.random()*6-3);  //设置垃圾旋转角度
 		//判断是可回收还是不可回收
-		if(Math.random()*10>8){
+		if(Math.random()*10>5){
 			sgg.image = sg1;
 			sgg.fs = 10;
-		}else{
-			if(Math.random()*10>7){
+		}
+		else(Math.random()*10>6)
+		{
 			sgg.image = sg2;
 			sgg.fs = 20;}
-			else if(Math.random *10>4){
+		if(Math.random *10>5){
 				sgg.image = sg3;
 				sgg.fs=10;
 			}
-			else if (Math.random()*10>5){
-				sgg.image =sg3;
+		else if (Math.random()*10>6){
+				sgg.image =sg5;
 				sgg.fs =10;
 			}
 			
-		}
+		
 		
 		sgArr[sgj] = sgg;
 		sgj++;
@@ -271,14 +271,13 @@ function getmark(){
 function LoadImg(){
 	men.src = "images/men.png";
 	sg1.src = "images/laji.png";
-	sg2.src = "images/banana.png";
+	sg2.src = "images/laji2.png";
 	sg3.src="images/sg3.png";
 	pan.src = "images/pan.png";
 	fsb.src = "images/fsb.png";
 	xue.src = "images/xue.png";
 	bg.src = "images/bg.png";
 	zd.src = "images/sg4.png";
-	sg4.src ="images/sg4.png";
 	sg5.src = "images/sg5.png";
 	menn.image = men;
 	pann.image = pan;
