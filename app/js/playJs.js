@@ -8,7 +8,7 @@ var bgW; //背景宽度
 var bgH; //背景高度
 var sgY = speed; //垃圾速度
 var sgJg = 100; //垃圾间隔
-var sgRed; //水果旋转
+var sgRed; //垃圾旋转
 var sgGs = 0; //捡到垃圾个数
 var ps = 0; //盘数
 var fs = 0; //分数
