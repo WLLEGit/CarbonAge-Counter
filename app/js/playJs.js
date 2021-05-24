@@ -14,7 +14,7 @@ var ps = 0; //盘数
 var fs = 0; //分数
 var vita = 10; //生命
 var pic = 0; //帧数
-var gamev = false; //游戏状态
+var gamev = false; //游 戏状态
 
 var men = new Image();
 var bg = new Image();
