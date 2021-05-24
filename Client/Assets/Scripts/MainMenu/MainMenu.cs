@@ -13,10 +13,21 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingScene;
     public GameObject MenuScene;
     public GameObject BattleScene;
+
+    private GameObject toSetActive = null;
+    private GameObject toDeactive = null;
     private void Awake()
     {
         BattleScene.SetActive(true);
         BattleScene.SetActive(false);
+    }
+    private void Update()
+    {
+        if(toSetActive != null)
+        {
+            toSetActive.gameObject.SetActive(true) ;
+            toSetActive = null;
+        }
     }
     public void PlayGame(){
         StartCoroutine(TranslateButtonsSmoothly(200));
@@ -25,8 +36,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     public void Settings(){
-        SettingScene = GameObject.Find("SettingScene");
-        SettingScene.SetActive(true);
+        //toSetActive = SettingScene;
     }
     public void OnSelectAndInputDone()
     {

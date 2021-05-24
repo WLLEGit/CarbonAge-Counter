@@ -12,6 +12,9 @@ using System.Linq;
 public class ClientNetwork : MonoBehaviour
 {
     public static ClientNetwork ClientNetworkInstance;
+    public AudioSource BgmSource;
+    public AudioClip[] audioClips;
+
     private Socket Socket;
     [HideInInspector]
 
@@ -21,8 +24,15 @@ public class ClientNetwork : MonoBehaviour
     {
         ClientNetworkInstance = this;
         Debug.Log("ClientNetwork Loaded");
+        BgmSource.loop = true;
     }
-
+    public void ChangeBGM()
+    {
+        System.Random rd = new System.Random();
+        int i = rd.Next(0, 2);
+        BgmSource.clip = audioClips[i];
+        BgmSource.Play();
+    }
     public bool ConnectServer(string ip, int port)
     {
         IPEndPoint point = new IPEndPoint(IPAddress.Parse(ip), port);
