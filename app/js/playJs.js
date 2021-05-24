@@ -273,7 +273,7 @@ function getmark(){
 }
 function LoadImg(){
 	men.src = "images/men.png";
-	sg1.src = "images/apple.png";
+	sg1.src = "images/laji.png";
 	sg2.src = "images/banana.png";
 	sg3.src="images/sg3.png";
 	pan.src = "images/pan.png";
