@@ -9,7 +9,7 @@ var bgH; //背景高度
 var sgY = speed; //水果速度
 var sgJg = 100; //水果间隔
 var sgRed; //水果旋转
-var sgGs = 0; //捡到水果个数
+var sgGs = 0; //捡到垃圾个数
 var ps = 0; //盘数
 var fs = 0; //分数
 var vita = 10; //生命
