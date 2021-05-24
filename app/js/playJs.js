@@ -213,7 +213,7 @@ function SzZd(){
 		}		
 	}
 }
-//绘制炸弹
+//绘制不可回收垃圾
 function DrawZd(){
 	SzZd();
 	for(var i = 0; i<zdArr.length; i++){
@@ -228,7 +228,7 @@ function DrawZd(){
 		}
 	}
 }
-//物体之间碰撞
+//碰撞
 function wtjpFun(obj1, obj2, fewi){
 	var A1 = obj1.x + fewi;
 	var B1 = obj1.x + obj1.image.width - fewi;
@@ -252,15 +252,15 @@ function HzFun(){
 	cte.clearRect(0,0,cteWidth,cteHeight);
 	cte.drawImage(bg, 0, 0, bgW, bgH);
 	cte.drawImage(menn.image, menn.x, menn.y);
-	//绘制盘子
+	//绘制垃圾桶
 	pann.x = menn.x+10;
 	pann.y = menn.y+50;
 	cte.drawImage(pann.image, pann.x, pann.y);
-	HzSg(); //绘制水果
-	DrawZd(); // 绘制炸弹
+	HzSg(); //绘制可回收垃圾
+	DrawZd(); // 绘制不可回收垃圾
 	DarwFsb();//绘制分数
-	zdj = 0; //炸弹间隔
-	zdJg = 800; //炸弹间隔
+	zdj = 0; //不可回收垃圾间隔
+	zdJg = 800; //不可回收垃圾间隔
 	zdY = speed;
 	pic++;
 }
@@ -297,14 +297,14 @@ function Add(){
 		menn.x = e.targetTouches[0].pageX-100;   //安卓手机 要用 targetTouches[0].pageX 
 	}
 	$("#play").click(function(){
-		sgJg = 100; //水果间隔
+		sgJg = 100; //垃圾间隔
 		ps = 0; //盘数
 		fs = 0; //分数
 		vita = 10; //生命
 		pic = 0; //帧数
-		sgj = 0; //水果j
-		sgGs = 0; //捡到水果个数
-		sgY = speed; //水果速度
+		sgj = 0; //垃圾j
+		sgGs = 0; //接到可回收垃圾个数
+		sgY = speed; //降落速度
 		sgArr = [];
 		Sos();
 	});
