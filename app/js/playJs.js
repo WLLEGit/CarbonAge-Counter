@@ -280,7 +280,7 @@ function LoadImg(){
 	fsb.src = "images/fsb.png";
 	xue.src = "images/xue.png";
 	bg.src = "images/bg.png";
-	zd.src = "images/zd.png";
+	zd.src = "images/sg4.png";
 	sg4.src ="images/sg4.png";
 	sg5.src = "images/sg5.png";
 	menn.image = men;
