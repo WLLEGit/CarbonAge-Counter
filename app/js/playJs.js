@@ -6,8 +6,8 @@ var erval; //循环函数名
 var speed = 1; //不变速度名
 var bgW; //背景宽度
 var bgH; //背景高度
-var sgY = speed; //水果速度
-var sgJg = 100; //水果间隔
+var sgY = speed; //垃圾速度
+var sgJg = 100; //垃圾间隔
 var sgRed; //水果旋转
 var sgGs = 0; //捡到垃圾个数
 var ps = 0; //盘数
