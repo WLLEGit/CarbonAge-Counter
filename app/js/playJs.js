@@ -102,23 +102,23 @@ function HzSg(){
 	for(var i =0; i<sgArr.length; i++){
 		sgArr[i].y += sgY;
 		if(sgArr[i].y<cteHeight){
-			//判断是否接到水果
+			//判断是否接到可回收垃圾
 			if(wtjpFun(sgArr[i], pann, 10)&&!sgArr[i].panS){
 				sgArr[i].panX = sgArr[i].x-pann.x;
 				sgArr[i].panS = true;
 				sgGs++;
 				fs += sgArr[i].fs;
 				Fsjs();
-				SgYx(); //播放水果音效
+				SgYx(); //播放音效
 			}
 			cte.save();
 			if(sgArr[i].panS){
-				if(sgGs%10==0){   //一盘要消失
+				if(sgGs%10==0){   //垃圾要消失
 					sgArr[i].hid = true;
 				}else{
 					sgArr[i].y = pann.y-10;
 				}
-				sgArr[i].x = pann.x+sgArr[i].panX; //设置水果的X轴
+				sgArr[i].x = pann.x+sgArr[i].panX; //设置垃圾的X轴
 			}else{
 				sgArr[i].red += sgArr[i].redC;
 			}
@@ -185,9 +185,9 @@ function Sos(){
 		clearInterval(erval);
 	}
 }
-//炸弹
+//不可回收垃圾
 function SzZd(){
-	if(pic%2==0){  //炸弹图片x轴
+	if(pic%2==0){  //不可回收垃圾图片x轴
 		zdiX = 0;
 	}else{
 		zdiX = 26;
@@ -200,7 +200,7 @@ function SzZd(){
 		zdd.redC = -(Math.random()*6-3);
 		zdArr[zdj] = zdd;
 		zdj++;
-		zdY +=0.25; //炸弹下落速度
+		zdY +=0.25; //不可回收垃圾下落速度
 	}
 	for(var i = 0; i<zdArr.length; i++){
 		if(wtjpFun(zdArr[i], pann, 10)&&!zdArr[i].hid){
