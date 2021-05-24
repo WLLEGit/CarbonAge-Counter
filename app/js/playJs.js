@@ -90,7 +90,7 @@ function HzSg(){
 				sgg.fs=10;
 			}
 			else if (Math.random()*10>5){
-				sgg.image =sg4;
+				sgg.image =sg3;
 				sgg.fs =10;
 			}
 			else{
