@@ -70,14 +70,14 @@ function ZdYx(){
 	document.getElementById("zdmu").play();
 }
 
-//绘制水果
+//绘制垃圾
 function HzSg(){
 	if(pic%sgJg==0){
 		var sgg = new Sg();
 		sgg.x = Math.random()*cteWidth;
 		sgg.y = -20;
-		sgg.redC = -(Math.random()*6-3);  //设置水果旋转角度
-		//判断是苹果还是香蕉
+		sgg.redC = -(Math.random()*6-3);  //设置垃圾旋转角度
+		//判断是可回收还是不可回收
 		if(Math.random()*10>8){
 			sgg.image = sg1;
 			sgg.fs = 10;
