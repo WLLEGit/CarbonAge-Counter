@@ -22,6 +22,7 @@ public class battle : MonoBehaviour
     }
     private void Update()
     {
+        
         if(toSetActive.Count != 0)
         {
             foreach(var obj in toSetActive)

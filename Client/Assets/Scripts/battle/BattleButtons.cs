@@ -23,6 +23,7 @@ public class BattleButtons : MonoBehaviour
     }
     private void Update()
     {
+        CanUse();
         if (isCardsButtonEnabled)
         {
             CanUse();
@@ -32,7 +33,7 @@ public class BattleButtons : MonoBehaviour
     // Start is called before the first frame update
     public void Settings()
     {
-        SettingScene.SetActive(true);
+        SettingManager.SettingManagerInstance.ShowSetting(BattleScene.gameObject);
     }
     public void CanUse()
     {

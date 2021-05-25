@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class SettingManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static SettingManager SettingManagerInstance;
+    public Canvas Canvas;
     bool hideSetting = false;
+    bool showSetting = false;
+    GameObject returnGameObject = null;
     void Start()
     {
-        
+        SettingManagerInstance = this;
+        Canvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -16,13 +20,27 @@ public class SettingManager : MonoBehaviour
     {
         if(hideSetting)
         {
-            gameObject.SetActive(false);
+            Canvas.gameObject.SetActive(false);
             hideSetting = false;
+            returnGameObject.SetActive(true);
         }
+        if(showSetting)
+        {
+            returnGameObject.SetActive(false);
+            Canvas.gameObject.SetActive(true);
+            showSetting = false;
+        }
+    }
+
+    public void ShowSetting(GameObject gameObject)
+    {
+        returnGameObject = gameObject;
+        showSetting = true;
     }
 
     public void OnExitButtonClicked()
     {
+        Debug.Log("ExitSetting");
         hideSetting = true;
     }
 
