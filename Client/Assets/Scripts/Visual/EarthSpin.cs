@@ -23,6 +23,9 @@ public class EarthSpin : MonoBehaviour
         {
             transform.Rotate(-Vector3.up, 200 * Time.deltaTime);
         }
+        else if (curMousePosition.x == PreMousePosition.x){
+            transform.Rotate(-Vector3.up, 50 * Time.deltaTime);
+        }
         PreMousePosition = curMousePosition;
     }
 }

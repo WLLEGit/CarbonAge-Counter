@@ -183,7 +183,7 @@ RectTransform:
   - {fileID: 4386269061228071278}
   - {fileID: 4386269060291174156}
   m_Father: {fileID: 4386269061102631252}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1599,9 +1599,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4386269060177663219}
-  - {fileID: 4386269062024150087}
   - {fileID: 4386269061801490276}
   - {fileID: 4386269060216976759}
+  - {fileID: 4386269062024150087}
   m_Father: {fileID: 4386269060585087577}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1664,6 +1664,9 @@ MonoBehaviour:
   DropdownSelecter: {fileID: 4386269061686868910}
   Buttons: {fileID: 4386269061801490276}
   InputAndSelect: {fileID: 4386269060216976759}
+  SettingScene: {fileID: 0}
+  MenuScene: {fileID: 0}
+  BattleScene: {fileID: 0}
 --- !u!114 &5237584663004148296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,6 +1882,9 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
   m_OnValueChanged:
@@ -2868,7 +2874,7 @@ RectTransform:
   - {fileID: 4386269061043440624}
   - {fileID: 4386269060453213548}
   m_Father: {fileID: 4386269061102631252}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3243,11 +3249,11 @@ RectTransform:
   - {fileID: 4386269060115889659}
   - {fileID: 4386269061409841463}
   m_Father: {fileID: 4386269061102631252}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.2601, y: 11.0569}
+  m_AnchoredPosition: {x: 26.260101, y: 11.0569}
   m_SizeDelta: {x: 152.5201, y: 122.1137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4386269062024150082

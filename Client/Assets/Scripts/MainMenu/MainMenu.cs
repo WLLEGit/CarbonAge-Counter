@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     public void Settings(){
-        //toSetActive = SettingScene;
+        toSetActive = SettingScene;
     }
     public void OnSelectAndInputDone()
     {
