@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: SettingScene
       value: 
       objectReference: {fileID: 2027082960}
+    - target: {fileID: 4386269061102631251, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
+      propertyPath: EnterButtonText
+      value: 
+      objectReference: {fileID: 1348072973}
     - target: {fileID: 4386269061102631253, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
       propertyPath: m_Type
       value: 0
@@ -721,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142949151872584289, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
@@ -7034,6 +7038,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1348072973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4386269061654247035, guid: 04902e33b9e759345949cc58f45ea5ec, type: 3}
+  m_PrefabInstance: {fileID: 460090205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1362717653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7239,7 +7254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 94556257964838402, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.445999
+      value: 6.445938
       objectReference: {fileID: 0}
     - target: {fileID: 204817427869045860, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7559,7 +7574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536123477855, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536336361234, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: BattleScene
@@ -7611,11 +7626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536474431238, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.1459963
+      value: -1.1459961
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536474431238, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.32089245
+      value: 0.32092285
       objectReference: {fileID: 0}
     - target: {fileID: 4875838536474431239, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_IsActive
@@ -7763,7 +7778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8284396841417744232, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00009918213
+      value: -0.00010681152
       objectReference: {fileID: 0}
     - target: {fileID: 8284396841417744232, guid: a0cc1667586ebce4abf9eaaac30052ec, type: 3}
       propertyPath: m_AnchoredPosition.y

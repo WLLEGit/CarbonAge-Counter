@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingScene;
     public GameObject MenuScene;
     public GameObject BattleScene;
+    public Text EnterButtonText;
 
     private GameObject toSetActive = null;
     private GameObject toDeactive = null;
@@ -55,7 +56,7 @@ public class MainMenu : MonoBehaviour
     }
     private IEnumerator WaitToStartGame()
     {
-        EditorUtility.DisplayDialog("WaitAnotherPlayer", "Wait Another Player to Connect....", "OK");
+        EnterButtonText.text = "等待另一位玩家进入中";
         yield return new WaitUntil(() => PlayerManager.isRivalPlayerSet == true);
         BattleScene.SetActive(true);
         MenuScene.SetActive(false);
