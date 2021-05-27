@@ -35,28 +35,28 @@ namespace GameServer
 
         private readonly int criticalCarbonPoints = 850;
 
-        public void StartGame(Room room)
+    public void StartGame(Room room)
+    {
+        Room = room;
+        CurPlayer = Room.Players[0];
+        while (Room.Players[0].Msg.Length == 0 || Room.Players[1].Msg.Length == 0) ;  //等待两个玩家初始化信息
+        Room.Players[0].ProcessMessage(Room.Players[0].Msg);
+        Room.Players[1].ProcessMessage(Room.Players[1].Msg);
+        for(CurEra = Era.Time1; CurEra <= Era.Time3; ++CurEra)
         {
-            Room = room;
-            CurPlayer = Room.Players[0];
-            while (Room.Players[0].Msg.Length == 0 || Room.Players[1].Msg.Length == 0) ;  //等待两个玩家初始化信息
-            Room.Players[0].ProcessMessage(Room.Players[0].Msg);
-            Room.Players[1].ProcessMessage(Room.Players[1].Msg);
-            for(CurEra = Era.Time1; CurEra <= Era.Time3; ++CurEra)
+            SetEra();
+            for (TurnCount = 0; TurnCount < TURNSEACHERA; ++TurnCount)
             {
-                SetEra();
-                for (TurnCount = 0; TurnCount < TURNSEACHERA; ++TurnCount)
-                {
-                    CurPlayer.StartTurn();
-                    CurPlayer = Room.AnotherPlayer(CurPlayer);
-                    CurPlayer.StartTurn();
-                    EndTurn();
-                }
-                if(CurEra != Era.Time3)
-                    TransitionTurn();
+                CurPlayer.StartTurn();
+                CurPlayer = Room.AnotherPlayer(CurPlayer);
+                CurPlayer.StartTurn();
+                EndTurn();
             }
-            EndGame();
+            if(CurEra != Era.Time3)
+                TransitionTurn();
         }
+        EndGame();
+    }
         private void SetEra()
         {
             List<Command> commands = new List<Command> { new Command(Room.Players[0], "SetEra " + CurEra.ToString()), new Command(Room.Players[1], "SetEra " + CurEra.ToString()) };

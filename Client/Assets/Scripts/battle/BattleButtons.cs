@@ -23,7 +23,6 @@ public class BattleButtons : MonoBehaviour
     }
     private void Update()
     {
-        CanUse();
         if (isCardsButtonEnabled)
         {
             CanUse();
