@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Visual\EarthSpin.cs" />
     <Compile Include="Assets\Scripts\Visual\SlotsManager.cs" />
     <Compile Include="Assets\Scripts\battle\BattleButtons.cs" />
+    <Compile Include="Assets\Scripts\ButtonSoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

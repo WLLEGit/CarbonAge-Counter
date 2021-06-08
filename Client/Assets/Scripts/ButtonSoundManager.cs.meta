@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 02d1ced6248ba4b40aca863c7bb99bd2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MouseEnterSound: {instanceID: 0}
+  - MousePressSound: {instanceID: 0}
+  - MouseReleaseSound: {instanceID: 0}
+  - MouseLeaveSound: {instanceID: 0}
+  - Sound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
